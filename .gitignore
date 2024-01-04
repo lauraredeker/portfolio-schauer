@@ -3,6 +3,8 @@ node_modules
 /build
 /.svelte-kit
 /package
+/.history
+/.netlify
 .env
 .env.*
 !.env.example
