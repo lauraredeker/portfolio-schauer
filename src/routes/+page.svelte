@@ -1,11 +1,15 @@
-<div class="container">
-    <h1 class="text-xxl">Page</h1>
-    <p>This is a page.</p>
-</div>
+<main class="w-full h-screen text-white">
+    <section class="flex items-center justify-center w-full h-full">
+        <div class="text-center">
+            <h1 class="text-xxl font-bold">Page</h1>
+            <p>This is a page.</p>
+        </div>
+    </section>
+</main>
 
-<style lang="postcss">
+<style lang="scss">
   :global(html) {
-    background-color: theme(colors.gray.100);
+    background-color: #000
   }
 </style>
 

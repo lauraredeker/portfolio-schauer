@@ -1,18 +1,18 @@
-# create-svelte
+# ⚡️SvelteKit-Portfolio for Michael Schauer⚡️
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+## A portfolio website made using `@sveltejs/kit` (work in progress)
 
-## Creating a project
+To view a demo example, **[click here](https://schauer.netlify.app/)**
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Source Information
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+This website is built with
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+- [SvelteKit](https://kit.svelte.dev/) (Frontend Framework)
+- [TypeScript](https://www.typescriptlang.org/)
+- [TailwindCSS](https://tailwindcss.com)
+- [Prettier](https://prettier.io/)
+- [ESLint](https://eslint.org/)
 
 ## Developing
 
