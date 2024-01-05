@@ -1,4 +1,55 @@
-/* Write your global styles here, in PostCSS syntax */
+/**
+ * This injects Tailwind's base styles and any base styles registered by
+ * plugins.
+ */
 @tailwind base;
+
+/**
+ * This injects Tailwind's component classes and any component classes
+ * registered by plugins.
+ */
 @tailwind components;
+
+/**
+ * This injects Tailwind's utility classes and any utility classes registered
+ * by plugins.
+ */
 @tailwind utilities;
+
+/**
+ * Use this directive to control where Tailwind injects the hover, focus,
+ * responsive, dark mode, and other variants of each class.
+ *
+ * If omitted, Tailwind will append these classes to the very end of
+ * your stylesheet by default.
+ */
+@tailwind variants;
+
+
+@layer base {
+  h1 {
+    @apply text-2xl;
+  }
+  h2 {
+    @apply text-xl;
+  }
+}
+
+@layer components {
+  .button {
+    @apply bg-primary-500 shadow relative rounded px-6 py-2 text-2xl text-white active:top-0.5;
+  }
+
+  .link {
+	@apply text-primary-300 active:text-primary-100;
+  }
+}
+
+@layer utilities {
+  .filter-none {
+    filter: none;
+  }
+  .filter-grayscale {
+    filter: grayscale(100%);
+  }
+}
