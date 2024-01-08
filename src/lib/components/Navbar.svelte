@@ -13,10 +13,18 @@
 	</a>
 	<Burger bind:isOpen={isOpened} />
 
-	<div class="hidden" class:block={isOpened}>
+	<div
+		class="fixed left-0 top-0 h-screen w-screen flex-col items-center justify-center bg-black"
+		class:hidden={!isOpened}
+		class:flex={isOpened}
+	>
 		{#each routes as route}
-			<a class={`button ${segment === route.href ? 'selected' : ''}`} href={route.href}
-				>{route.label}</a
+			<a
+				class={`block py-2 text-3xl hover:text-primary-400 md:py-6 md:text-6xl ${
+					segment === route.href ? 'selected' : ''
+				}`}
+				on:click={() => (isOpened = false)}
+				href={route.href}>{route.label}</a
 			>
 		{/each}
 	</div>
