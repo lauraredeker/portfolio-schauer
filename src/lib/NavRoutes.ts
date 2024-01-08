@@ -10,7 +10,15 @@ const routes = [
 	{
 		href: '/contact',
 		label: 'Contact'
+	},
+	{
+		href: '/privacy-policy',
+		label: 'Privacy Policy'
+	},
+	{
+		href: '/imprint',
+		label: 'Imprint'
 	}
-];
+]
 
-export default routes;
+export default routes

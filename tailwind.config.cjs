@@ -1,31 +1,35 @@
-const typography = require('@tailwindcss/typography');
-const forms = require('@tailwindcss/forms');
+const typography = require('@tailwindcss/typography')
+const forms = require('@tailwindcss/forms')
 const colors = require('tailwindcss/colors')
-const defaultTheme = require('tailwindcss/defaultTheme');
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 /** @type {import('tailwindcss').Config}*/
 const config = {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
+	corePlugins: {
+		preflight: true
+	  },
 	theme: {
 		extend: {
 			colors: {
+				...colors,
 				transparent: 'transparent',
 				current: 'currentColor',
-				black: colors.black,
-				white: colors.white,
-				purple: colors.purple,
 				primary: {
-					'50': '#f3f2ff',
-					'100': '#e9e8ff',
-					'200': '#d5d4ff',
-					'300': '#b7b1ff',
-					'400': '#9385ff',
-					'500': '#6647ff',
-					'600': '#5e30f7',
-					'700': '#501ee3',
-					'800': '#4218bf',
-					'900': '#38169c',
-					'950': '#200b6a',
+					50: '#f3f2ff',
+					100: '#e9e8ff',
+					200: '#d5d4ff',
+					300: '#b7b1ff',
+					400: '#9385ff',
+					500: '#6647ff',
+					600: '#5e30f7',
+					700: '#501ee3',
+					800: '#4218bf',
+					900: '#38169c',
+					950: '#200b6a'
+				},
+				gray: {
+					...colors.neutral
 				},
 			}
 		},
@@ -42,39 +46,39 @@ const config = {
 			'5xl': [
 				'3.25rem',
 				{
-					lineHeight: '3.25rem',
-				},
+					lineHeight: '3.25rem'
+				}
 			],
 			'6xl': [
 				'4.5rem',
 				{
-					lineHeight: '4.75rem',
-				},
+					lineHeight: '4.75rem'
+				}
 			],
 			'7xl': [
 				'6rem',
 				{
-					lineHeight: '1',
-				},
+					lineHeight: '1'
+				}
 			],
 			'8xl': [
 				'8rem',
 				{
-					lineHeight: '1',
-				},
+					lineHeight: '1'
+				}
 			],
 			'9xl': [
 				'9.875rem',
 				{
-					lineHeight: '1',
-				},
+					lineHeight: '1'
+				}
 			],
 			'10xl': [
 				'10.75rem',
 				{
-					lineHeight: '1',
-				},
-			],
+					lineHeight: '1'
+				}
+			]
 		},
 		fontFamily: {
 			sans: ['Poppins', ...defaultTheme.fontFamily.sans]
@@ -82,6 +86,6 @@ const config = {
 	},
 
 	plugins: [forms, typography]
-};
+}
 
-module.exports = config;
+module.exports = config

@@ -1,4 +1,8 @@
 {
+	//"css.customData": [".vscode/tailwind.json"],
+	"[svelte]": {
+		"editor.defaultFormatter": "svelte.svelte-vscode"
+	  },
 	"files.exclude": {
 		"**/.git": true,
 		"**/.svn": true,
@@ -8,4 +12,7 @@
 		"**/Thumbs.db": true
 	},
 	"hide-files.files": [],
+	"editor.codeActionsOnSave": {
+		"source.fixAll": "explicit"
+	}
 }

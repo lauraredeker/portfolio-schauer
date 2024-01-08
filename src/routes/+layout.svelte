@@ -1,17 +1,15 @@
 <script>
-	import NavBar from '$lib/components/NavBar.svelte';
-	import { page } from '$app/stores';
-	import '../app.pcss';
+	import NavBar from '$lib/components/NavBar.svelte'
+	import Footer from '$lib/components/Footer.svelte'
+	import { page } from '$app/stores'
+	import '../app.pcss'
 </script>
 
 <NavBar segment={$page.url.pathname} />
 
 <slot />
 
-<footer class="container mx-auto text-center py-4">
-	Created by <a class="link" href="//www.lauraredeker.com">Laura A. Redeker</a> ❤️ with
-	<a class="link" href="https://kit.svelte.dev/" target="_blank">SvelteKit</a>
-</footer>
+<Footer />
 
 <style lang="scss">
 	:global(html),

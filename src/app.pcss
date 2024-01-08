@@ -25,31 +25,30 @@
  */
 @tailwind variants;
 
-
 @layer base {
-  h1 {
-    @apply text-2xl;
-  }
-  h2 {
-    @apply text-xl;
-  }
+	h1 {
+		@apply text-2xl;
+	}
+	h2 {
+		@apply text-xl;
+	}
 }
 
 @layer components {
-  .button {
-    @apply bg-primary-500 shadow relative rounded px-6 py-2 text-2xl text-white active:top-0.5;
-  }
+	.button {
+		@apply relative rounded bg-primary-500 px-6 py-2 text-2xl text-white shadow active:top-0.5;
+	}
 
-  .link {
-	@apply text-primary-300 active:text-primary-100;
-  }
+	.link {
+		@apply text-primary-300 active:text-primary-100;
+	}
 }
 
 @layer utilities {
-  .filter-none {
-    filter: none;
-  }
-  .filter-grayscale {
-    filter: grayscale(100%);
-  }
+	.filter-none {
+		filter: none;
+	}
+	.filter-grayscale {
+		filter: grayscale(100%);
+	}
 }

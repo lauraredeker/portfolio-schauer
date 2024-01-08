@@ -1,47 +1,33 @@
-<script>
-	export let isOpen = false;
+<script lang="ts">
+	let isOpen = false
 </script>
 
 <button
 	aria-label="menu-button"
-	class="text-white flex flex-col items-center justify-center rounded-sm cursor-pointer border-none focus-visible:border-2 focus-visible:border-purple-400 focus:outline-none"
 	class:isOpen
+	class="flex h-10 w-10 cursor-pointer flex-col items-center justify-center rounded-sm border-none text-white focus:outline-none focus-visible:border-2 focus-visible:border-purple-400"
 	on:click={() => (isOpen = !isOpen)}
 >
-	<svg width="28" height="20" class="block min-h-8 stroke-2 transition-transform">
-		<line id="top" x1="0" y1="2" x2="32" y2="2" />
-		<line id="middle" x1="0" y1="12" x2="32" y2="12" />
-		<line id="bottom" x1="0" y1="22" x2="32" y2="22" />
-	</svg>
+	<div class="block h-auto w-8 -translate-x-1/2 -translate-y-1/2 transform">
+		<span
+			aria-hidden="true"
+			class="absolute block h-0.5 w-5 transform bg-current transition duration-500 ease-in-out"
+			class:rotate-45={isOpen}
+			class:-translate-y-1.5={!isOpen}
+		>
+		</span>
+		<span
+			aria-hidden="true"
+			class="absolute block h-0.5 w-5 transform bg-current transition duration-500 ease-in-out"
+			class:opacity-0={isOpen}
+		></span>
+		<span
+			aria-hidden="true"
+			class="absolute block h-0.5 w-5 transform bg-current transition duration-500 ease-in-out"
+			class:-rotate-45={isOpen}
+			class:translate-y-1.5={!isOpen}
+		></span>
+	</div>
 	<span class="sr-only">{isOpen ? 'Close Menu' : 'Open Menu'}</span>
-	<span class="font-semibold text-xxs -m-1">Menu</span>
+	<span class="-m-1 block text-xxs font-semibold">Menu</span>
 </button>
-
-<style>
-	svg line {
-		stroke: currentColor;
-		transition: transform 0.3s ease-in-out;
-	}
-
-	.isOpen #top {
-		transform: translate(6px, 0px) rotate(45deg);
-	}
-
-	.isOpen #middle {
-		stroke-dasharray: 0;
-		stroke-dashoffset: 0;
-		animation: fade 1s ease-in alternate forwards;
-	}
-
-	.isOpen #bottom {
-		transform: translate(-12px, 9px) rotate(-45deg);
-	}
-
-	@keyframes fade {
-		to {
-			stroke-dashoffset: 1000;
-			stroke-dasharray: 1000;
-		}
-	}
-
-</style>
