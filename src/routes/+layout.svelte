@@ -7,9 +7,10 @@
 
 <NavBar segment={$page.url.pathname} />
 
-<slot />
-
-<Footer />
+<div class="mx-auto flex h-screen max-w-screen-2xl flex-col justify-between">
+	<slot />
+	<Footer />
+</div>
 
 <style lang="scss">
 	:global(html),

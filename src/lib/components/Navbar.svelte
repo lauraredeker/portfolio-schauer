@@ -21,7 +21,7 @@
 		{#each routes as route}
 			<a
 				class={`block py-2 text-3xl hover:text-primary-400 md:py-6 md:text-6xl ${
-					segment === route.href ? 'selected' : ''
+					segment === route.href ? 'text-primary-400 underline underline-offset-8' : ''
 				}`}
 				on:click={() => (isOpened = false)}
 				href={route.href}>{route.label}</a
