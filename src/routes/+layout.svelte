@@ -1,6 +1,10 @@
 <script>
+	import NavBar from '$lib/components/NavBar.svelte';
+	import { page } from '$app/stores';
 	import '../app.pcss';
 </script>
+
+<NavBar segment={$page.url.pathname} />
 
 <slot />
 

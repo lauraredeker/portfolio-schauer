@@ -29,6 +29,53 @@ const config = {
 				},
 			}
 		},
+		fontSize: {
+			xxs: '.685rem',
+			xs: '.75rem',
+			sm: '.875rem',
+			base: '1rem',
+			l: '1.25rem',
+			xl: '1.5rem',
+			'2xl': ['1.875rem', {}],
+			'3xl': ['2.25rem', {}],
+			'4xl': ['2.875rem', {}],
+			'5xl': [
+				'3.25rem',
+				{
+					lineHeight: '3.25rem',
+				},
+			],
+			'6xl': [
+				'4.5rem',
+				{
+					lineHeight: '4.75rem',
+				},
+			],
+			'7xl': [
+				'6rem',
+				{
+					lineHeight: '1',
+				},
+			],
+			'8xl': [
+				'8rem',
+				{
+					lineHeight: '1',
+				},
+			],
+			'9xl': [
+				'9.875rem',
+				{
+					lineHeight: '1',
+				},
+			],
+			'10xl': [
+				'10.75rem',
+				{
+					lineHeight: '1',
+				},
+			],
+		},
 		fontFamily: {
 			sans: ['Poppins', ...defaultTheme.fontFamily.sans]
 		}
