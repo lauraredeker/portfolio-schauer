@@ -12,7 +12,6 @@ const config = {
 	theme: {
 		extend: {
 			colors: {
-				...colors,
 				transparent: 'transparent',
 				current: 'currentColor',
 				primary: {
@@ -34,7 +33,6 @@ const config = {
 			}
 		},
 		fontSize: {
-			xxs: '.685rem',
 			xs: '.75rem',
 			sm: '.875rem',
 			base: '1rem',

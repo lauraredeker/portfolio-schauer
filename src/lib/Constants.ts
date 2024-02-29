@@ -1,1 +1,5 @@
 export const Email = 'michael@michaelschauer.com'
+export const Domain = 'genart.michaelschauer.com'
+export const FullName = 'Michael Schauer'
+export const Address = '1234 Elm Street'
+export const Instagram = 'https://www.instagram.com/michaelschauerphoto/'

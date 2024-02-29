@@ -1,6 +1,6 @@
 <script lang="ts">
-	export let isOpen: boolean // <--- added above the reactive assignment
-	isOpen = false // <-- `show` now has type `boolean`
+	// isOpen is a prop that can be passed into the Burger component from a parent component. It's defined as a boolean.
+	export let isOpen: boolean
 </script>
 
 <button

@@ -7,12 +7,12 @@
 
 <NavBar segment={$page.url.pathname} />
 
-<div class="mx-auto flex h-screen max-w-screen-2xl flex-col justify-between">
+<div class="mx-auto flex h-screen max-w-screen-xl flex-col items-center justify-between">
 	<slot />
 	<Footer />
 </div>
 
-<style lang="scss">
+<style>
 	:global(html),
 	:global(body) {
 		transition: background-color 0.2s ease 0s;

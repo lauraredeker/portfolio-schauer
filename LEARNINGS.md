@@ -21,7 +21,7 @@ $: show = !!data.someKey; // <-- `show` now has type `boolean`
 
 ## HTML/Accessibility
 
-- `aria-current` to a link to mark it as [the current page link](https://tink.uk/using-the-aria-current-attribute/).
+- add `aria-current` to a link to mark it as [the current page link](https://tink.uk/using-the-aria-current-attribute/).
 
 ## VSCode
 
