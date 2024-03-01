@@ -5,7 +5,7 @@
 	import '../app.pcss'
 </script>
 
-<NavBar segment={$page.url.pathname} />
+<Navbar segment={$page.url.pathname} />
 
 <div class="w-screen bg-black">
 	<main class="min-h-screen">

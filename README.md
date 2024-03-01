@@ -1,8 +1,10 @@
 # ⚡️SvelteKit-Portfolio for Michael Schauer⚡️
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6b9c55d8-d716-41ea-b354-1e5511d7532d/deploy-status)](https://app.netlify.com/sites/schauer/deploys)
+
 ## A portfolio website made using `@sveltejs/kit` (work in progress)
 
-To view a demo example, **[click here](https://schauer.netlify.app/)**
+To view a demo: **[click here](https://schauer.netlify.app/)**
 
 ## Source Information
 
