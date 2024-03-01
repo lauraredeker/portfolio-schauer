@@ -1,8 +1,11 @@
 <script lang="ts">
-	import Logo from '$lib/assets/logo.svg'
 	import BackgroundImage5 from '$lib/assets/design5.png'
 	import BackgroundImage4 from '$lib/assets/design4.png'
 	import BackgroundImage3 from '$lib/assets/design3.png'
+	import { LightBackground, DarkBackground } from '$lib/Constants'
+	import { customBackground } from '$lib/store'
+
+	$: isDark = false
 </script>
 
 <svelte:head>
@@ -19,6 +22,15 @@
 					And I'm watching all the stars burn out<br />
 					Trying to pretend that <i>I care</i>
 				</h2>
+				<button
+					class="ml-96 mt-20 bg-white px-4 py-2 text-black"
+					on:click={() => {
+						isDark ? customBackground.set(LightBackground) : customBackground.set(DarkBackground)
+						isDark = !isDark
+					}}
+				>
+					{isDark ? 'turn on the light' : 'make it dark'}
+				</button>
 			</div>
 			<div>
 				<img
