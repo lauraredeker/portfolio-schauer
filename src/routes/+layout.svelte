@@ -1,5 +1,5 @@
 <script>
-	import NavBar from '$lib/components/NavBar.svelte'
+	import Navbar from '$lib/components/Navbar.svelte'
 	import Footer from '$lib/components/Footer.svelte'
 	import { page } from '$app/stores'
 	import '../app.pcss'

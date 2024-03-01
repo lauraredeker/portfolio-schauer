@@ -6,10 +6,8 @@
 	let isOpened = false
 	export let segment: string
 
-	$: menuClasses = `
-		fixed top-0 flex h-screen w-screen flex-col items-center justify-center bg-black bg-opacity-70 backdrop-blur-lg transition-all duration-700
-		${isOpened ? 'left-0 opacity-100' : '-left-[100%] opacity-0'}
-	`
+	$: menuClasses = `fixed top-0 flex h-screen w-screen flex-col items-center justify-center bg-black bg-opacity-70 backdrop-blur-lg transition-all duration-700
+		${isOpened ? 'left-0 opacity-100' : '-left-[100%] opacity-0'}`
 </script>
 
 <nav class="max-w-screen-3xl fixed top-0 z-50 mx-auto w-full indent-0">
@@ -17,7 +15,7 @@
 		<a href="/">
 			<img
 				src={Logo}
-				alt="logo"
+				alt="Michael Schauer Logo"
 				class="size-8"
 			/>
 		</a>
