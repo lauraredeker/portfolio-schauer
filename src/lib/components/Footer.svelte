@@ -1,19 +1,32 @@
-<footer class="container mx-auto py-4 text-center text-sm md:text-base">
-	&copy; {new Date().getFullYear()} Michael Schauer. Crafted with ♡ by
-	<a
-		class="link"
-		href="https://www.lauraredeker.com"
-		rel="noopener noreferrer"
-		target="_blank"
-		>Laura A. Redeker
-	</a>
-	using
-	<a
-		class="link"
-		rel="noopener noreferrer"
-		href="https://kit.svelte.dev/"
-		target="_blank"
-	>
-		SvelteKit
-	</a>
+<script lang="ts">
+	export let segment: string
+</script>
+
+<footer class="w-full justify-between text-center indent-4 text-xs md:flex md:py-5 md:text-base">
+	<div>
+		&copy; {new Date().getFullYear()} Michael Schauer. Design & Development by
+		<a
+			class="link"
+			href="https://www.lauraredeker.com"
+			rel="noopener noreferrer"
+			target="_blank"
+			>Laura A. Redeker
+		</a>
+	</div>
+	<div class="my-5 md:my-0 md:text-right">
+		<a
+			class={`link mr-4 ${
+				segment === '/privacy-policy' ? 'text-primary-200 underline underline-offset-4' : ''
+			}`}
+			href="/privacy-policy"
+			>Privacy Policy
+		</a>
+		<a
+			class={`link mr-4 ${
+				segment === '/imprint' ? 'text-primary-200 underline underline-offset-4' : ''
+			}`}
+			href="/imprint"
+			>Imprint
+		</a>
+	</div>
 </footer>

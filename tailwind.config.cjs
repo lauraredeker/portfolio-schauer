@@ -8,10 +8,11 @@ const config = {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	corePlugins: {
 		preflight: true
-	  },
+	},
 	theme: {
 		extend: {
 			colors: {
+				black: '#101112',
 				transparent: 'transparent',
 				current: 'currentColor',
 				primary: {
@@ -29,7 +30,7 @@ const config = {
 				},
 				gray: {
 					...colors.neutral
-				},
+				}
 			}
 		},
 		fontSize: {

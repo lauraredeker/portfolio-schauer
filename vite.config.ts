@@ -8,7 +8,7 @@ export default defineConfig({
 	},
 	resolve: {
 		alias: {
-		  $lib: '/src/lib',
-		},
-	  },
+			$lib: '/src/lib'
+		}
+	}
 })

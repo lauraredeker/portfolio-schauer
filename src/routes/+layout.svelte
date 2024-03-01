@@ -7,14 +7,17 @@
 
 <NavBar segment={$page.url.pathname} />
 
-<div class="mx-auto flex h-screen max-w-screen-xl flex-col items-center justify-between">
-	<slot />
-	<Footer />
+<div class="w-screen bg-black">
+	<main class="min-h-screen">
+		<slot />
+	</main>
+	<Footer segment={$page.url.pathname} />
 </div>
 
 <style>
 	:global(html),
 	:global(body) {
+		font-size: 18px;
 		transition: background-color 0.2s ease 0s;
 		position: relative;
 		width: 100%;
@@ -22,7 +25,7 @@
 		overflow: auto;
 		color: white;
 		font-family: 'Poppins', sans-serif;
-		background-color: #000;
+		background-color: #101112;
 	}
 
 	:global(::selection) {

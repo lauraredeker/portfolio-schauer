@@ -13,8 +13,8 @@ module.exports = {
 			config: 'tailwind.config.js',
 			prependCustom: false,
 			removeDuplicates: true,
-			whitelist: ['custom\\-.*'],
-		},
+			whitelist: ['custom\\-.*']
+		}
 	},
 	parser: '@typescript-eslint/parser',
 	plugins: ['@typescript-eslint'],
@@ -24,7 +24,7 @@ module.exports = {
 		extraFileExtensions: ['.svelte']
 	},
 	rules: {
-		'@typescript-eslint/no-var-requires': 'off',
+		'@typescript-eslint/no-var-requires': 'off'
 	},
 	env: {
 		browser: true,
@@ -40,4 +40,4 @@ module.exports = {
 			}
 		}
 	]
-};
+}

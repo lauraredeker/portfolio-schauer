@@ -2,7 +2,7 @@
 	//"css.customData": [".vscode/tailwind.json"],
 	"[svelte]": {
 		"editor.defaultFormatter": "svelte.svelte-vscode"
-	  },
+	},
 	"files.exclude": {
 		"**/.git": true,
 		"**/.svn": true,

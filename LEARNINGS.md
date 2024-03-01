@@ -11,9 +11,9 @@ Here's a list of my learnings while building this website.
 - 🎉 How do I type reactive assignments? / I get an "implicitly has type 'any' error"? [source](https://github.com/sveltejs/language-tools/blob/6ba86d2be3588d3cd374c7e4d1e46860d2218bec/docs/preprocessors/typescript.md#troubleshooting--faq)
 
 ```ts
-let show: boolean; // <--- added above the reactive assignment
-$: show = !!data.someKey; // <-- `show` now has type `boolean`
-````
+let show: boolean // <--- added above the reactive assignment
+$: show = !!data.someKey // <-- `show` now has type `boolean`
+```
 
 ## CSS
 

@@ -5,10 +5,7 @@
 	"printWidth": 100,
 	"semi": false,
 	"singleAttributePerLine": true,
-	"plugins": [
-		"prettier-plugin-svelte",
-		"prettier-plugin-tailwindcss"
-	],
+	"plugins": ["prettier-plugin-svelte", "prettier-plugin-tailwindcss"],
 	"overrides": [
 		{
 			"files": "*.svelte",
