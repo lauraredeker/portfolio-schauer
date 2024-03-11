@@ -5,6 +5,10 @@
 	import { customBackground } from '$lib/store'
 	import '../app.pcss'
 
+	// This data is received directly as props from
+	// the `load` function in `+page.server.js`
+	export let links: any = []
+
 	interface CSSVariable {
 		[name: string]: string
 	}
@@ -36,12 +40,16 @@
 
 <svelte:body use:applyCSSVariable={{ background: $customBackground }} />
 
-<Navbar segment={$page.url.pathname} />
+<Navbar
+	linklist={links}
+	segment={$page.url.pathname}
+/>
 
-<main class="min-h-screen">
+<main class="flex min-h-screen flex-col justify-between">
 	<slot />
+
+	<Footer segment={$page.url.pathname} />
 </main>
-<Footer segment={$page.url.pathname} />
 
 <style>
 	* {

@@ -6,12 +6,12 @@
 </script>
 
 <svelte:head>
-	<title>{Title} - {data?.content?.data?.title || 'Contact'}</title>
+	<title>{data?.content?.data?.title || 'Contact'} - {Title}</title>
 </svelte:head>
 
 <div class="container mx-auto w-full max-w-screen-xl px-5 py-20 md:px-10">
 	<h1>
-		{data.content?.data?.headline || 'Contact xx'}
+		{data.content?.data?.headline || 'Contact'}
 	</h1>
 	<section class="mt-10 text-pretty text-center">
 		<p>

@@ -2,12 +2,13 @@
 	import Burger from '$lib/components/Burger.svelte'
 	import Logo from '$lib/assets/logo.svg'
 	import routes from '$lib/NavRoutes'
-	import { LightBackground, DarkBackground } from '$lib/Constants'
+	import { LightBackground, DarkBackground, FullName } from '$lib/Constants'
 	import { customBackground } from '$lib/store'
 	import { IconMoon, IconSun, IconBrandDeno } from '@tabler/icons-svelte'
 
 	let isOpened = false
 	export let segment: string
+	export let linklist: any = []
 
 	$: isDark = true
 	$: menuClasses = `fixed top-0 h-screen w-screen flex flex-col items-center justify-center bg-black bg-opacity-70 backdrop-blur-lg transition-all duration-700
@@ -16,11 +17,16 @@
 
 <nav class="max-w-screen-3xl fixed top-0 z-40 mx-auto w-full indent-0">
 	<div class="absolute z-50 flex w-full flex-row items-center justify-between px-2 py-3 pr-4">
-		<a href="/">
+		<a
+			href="/"
+			class="flex flex-row items-center"
+		>
 			<IconBrandDeno
 				strokeWidth="1.5"
-				class="size-6 hover:text-primary-200 md:size-7"
+				class="mr-3 size-6 hover:text-primary-200 md:size-7"
 			/>
+			<span class="mr-1 inline-block font-bold">{FullName}</span>
+			<span class="text-italic inline-block">Art</span>
 		</a>
 		<div class="grid grid-cols-2 gap-x-3">
 			<button
@@ -42,6 +48,9 @@
 					/>
 				{/if}
 			</button>
+			{#each linklist as link (link.id)}
+				<a href={link.data.url}>{link.data.label}</a>
+			{/each}
 
 			<Burger bind:isOpen={isOpened} />
 		</div>
