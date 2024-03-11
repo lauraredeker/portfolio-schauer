@@ -1,17 +1,22 @@
 <script lang="ts">
 	import Burger from '$lib/components/Burger.svelte'
 	import Logo from '$lib/assets/logo.svg'
+	import Moon from '$lib/assets/icon-moon.svg'
+	import Sun from '$lib/assets/icon-sun.svg'
 	import routes from '$lib/NavRoutes'
+	import { LightBackground, DarkBackground } from '$lib/Constants'
+	import { customBackground } from '$lib/store'
 
 	let isOpened = false
 	export let segment: string
 
-	$: menuClasses = `fixed top-0 flex h-screen w-screen flex-col items-center justify-center bg-black bg-opacity-70 backdrop-blur-lg transition-all duration-700
-		${isOpened ? 'left-0 opacity-100' : '-left-[100%] opacity-0'}`
+	$: isDark = true
+	$: menuClasses = `fixed top-0 h-screen w-screen flex flex-col items-center justify-center bg-black bg-opacity-70 backdrop-blur-lg transition-all duration-700
+		${isOpened ? 'opacity-100 z-40 display-block' : 'hidden'}`
 </script>
 
-<nav class="max-w-screen-3xl fixed top-0 z-50 mx-auto w-full indent-0">
-	<div class="absolute z-50 flex w-full flex-row justify-between px-3 py-3">
+<nav class="max-w-screen-3xl fixed top-0 z-40 mx-auto w-full indent-0">
+	<div class="absolute z-50 flex w-full flex-row justify-between px-2 py-3 pr-4">
 		<a href="/">
 			<img
 				src={Logo}
@@ -19,7 +24,21 @@
 				class="size-8"
 			/>
 		</a>
-		<div>
+		<div class="grid grid-cols-2 gap-x-3">
+			<button
+				class="flex w-auto items-center justify-center"
+				on:click={() => {
+					isDark ? customBackground.set(LightBackground) : customBackground.set(DarkBackground)
+					isDark = !isDark
+				}}
+			>
+				<img
+					src={isDark ? Moon : Sun}
+					alt={isDark ? 'turn on the light' : 'make it dark'}
+					class="size-6"
+				/>
+			</button>
+
 			<Burger bind:isOpen={isOpened} />
 		</div>
 	</div>

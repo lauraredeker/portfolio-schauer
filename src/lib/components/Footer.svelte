@@ -2,8 +2,10 @@
 	export let segment: string
 </script>
 
-<footer class="w-full justify-between text-center indent-4 text-xs md:flex md:py-5 md:text-base">
-	<div>
+<footer
+	class="flex w-full flex-col-reverse justify-between text-center indent-4 text-xs md:flex-row md:py-5 xl:text-base"
+>
+	<div class="my-5 md:my-0">
 		&copy; {new Date().getFullYear()} Michael Schauer. Design & Development by
 		<a
 			class="link"
@@ -13,7 +15,7 @@
 			>Laura A. Redeker
 		</a>
 	</div>
-	<div class="my-5 md:my-0 md:text-right">
+	<div class="md:text-right">
 		<a
 			class={`link mr-4 ${
 				segment === '/privacy-policy' ? 'text-primary-200 underline underline-offset-4' : ''
