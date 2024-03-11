@@ -1,36 +1,42 @@
 <script lang="ts">
+	import { PUBLIC_API_KEY } from '$env/static/public'
+
 	import BackgroundImage5 from '$lib/assets/design5.png'
 	import BackgroundImage4 from '$lib/assets/design4.png'
 	import BackgroundImage3 from '$lib/assets/design3.png'
-	import { LightBackground, DarkBackground } from '$lib/Constants'
-	import { customBackground } from '$lib/store'
 
-	$: isDark = false
+	import { isPreviewing, Content } from '@builder.io/sdk-svelte'
+
+	// this data comes from the function in `+page.server.js`, which runs on the server only
+	export let data
+
+	// we want to show unpublished content when in preview mode.
+	const canShowContent = data.content || isPreviewing()
 </script>
 
 <svelte:head>
-	<title>Michael Schauer - Hello!</title>
+	<title>Michael Schauer - {data.content?.data?.title || 'Unpublished'}</title>
 </svelte:head>
 
 <main class="min-h-screen w-full overflow-x-hidden text-white">
 	<section>
-		<h1 class="fixed left-10 top-24 z-0 text-5xl font-extrabold md:text-8xl">Hi, I am Michael.</h1>
+		<h1 class="fixed left-20 top-24 z-0">
+			{data.content?.data?.title || 'Unpublished'}
+		</h1>
 
 		<div class="mt-14 grid grid-cols-1 gap-4 md:grid-cols-2">
 			<div>
-				<h2 class="ml-96 mt-80 text-pretty leading-10">
-					And I'm watching all the stars burn out<br />
-					Trying to pretend that <i>I care</i>
+				<h2 class="ml-20 mt-80 text-pretty leading-10">
+					{#if canShowContent}
+						<Content
+							model="page"
+							content={data.content}
+							apiKey={PUBLIC_API_KEY}
+						/>
+					{:else}
+						Content Not Found
+					{/if}
 				</h2>
-				<button
-					class="ml-96 mt-20 bg-white px-4 py-2 text-black"
-					on:click={() => {
-						isDark ? customBackground.set(LightBackground) : customBackground.set(DarkBackground)
-						isDark = !isDark
-					}}
-				>
-					{isDark ? 'turn on the light' : 'make it dark'}
-				</button>
 			</div>
 			<div>
 				<img
@@ -56,9 +62,3 @@
 		</div>
 	</section>
 </main>
-
-<style>
-	main {
-		background-image: url({design1});
-	}
-</style>

@@ -4,6 +4,5 @@ export const FullName = 'Michael Schauer'
 export const Address = '1234 Elm Street'
 export const Instagram = 'https://www.instagram.com/michaelschauerphoto/'
 
-
 export const DarkBackground = "#0a0908"
 export const LightBackground = "#C1ACCF"

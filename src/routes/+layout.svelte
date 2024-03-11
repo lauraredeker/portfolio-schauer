@@ -5,7 +5,6 @@
 	import { customBackground } from '$lib/store'
 	import '../app.pcss'
 
-	//
 	interface CSSVariable {
 		[name: string]: string
 	}
