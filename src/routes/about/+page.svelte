@@ -1,17 +1,17 @@
 <script>
-	import { Email, FullName } from '$lib/Constants'
+	import { FullName, Title } from '$lib/Constants'
 </script>
 
 <svelte:head>
-	<title>Michael Schauer Generative Art - About</title>
+	<title>{Title} - About</title>
 </svelte:head>
 
 <div class="container mx-auto w-full max-w-screen-xl px-5 py-20 md:px-10">
 	<h1>About</h1>
 	<section class="mt-10">
-		<h2 class="my-5">
+		<h3 class="my-5">
 			Hi, my name is <span class="">{FullName}</span>. I create generative art.
-		</h2>
+		</h3>
 		<p>
 			adjective iron pupil couple package dangerous foreign to noise saddle source actually hair
 			guess dead funny courage quietly environment through scientist count negative egg.<br />
@@ -26,7 +26,7 @@
 			discovery belt hand fall shorter knew telephone structure upper by your position traffic<br
 			/><br />
 		</p>
-		<h2 class="my-5">Okay, but what is generative art?</h2>
+		<h3 class="my-5">Okay, but what is generative art?</h3>
 		<p>
 			adjective iron pupil couple package dangerous foreign to noise saddle source actually hair
 			guess dead funny courage quietly environment through scientist count negative egg.<br />

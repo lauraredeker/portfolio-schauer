@@ -1,11 +1,10 @@
 <script lang="ts">
 	import Burger from '$lib/components/Burger.svelte'
 	import Logo from '$lib/assets/logo.svg'
-	import Moon from '$lib/assets/icon-moon.svg'
-	import Sun from '$lib/assets/icon-sun.svg'
 	import routes from '$lib/NavRoutes'
 	import { LightBackground, DarkBackground } from '$lib/Constants'
 	import { customBackground } from '$lib/store'
+	import { IconMoon, IconSun, IconBrandDeno } from '@tabler/icons-svelte'
 
 	let isOpened = false
 	export let segment: string
@@ -16,12 +15,11 @@
 </script>
 
 <nav class="max-w-screen-3xl fixed top-0 z-40 mx-auto w-full indent-0">
-	<div class="absolute z-50 flex w-full flex-row justify-between px-2 py-3 pr-4">
+	<div class="absolute z-50 flex w-full flex-row items-center justify-between px-2 py-3 pr-4">
 		<a href="/">
-			<img
-				src={Logo}
-				alt="Michael Schauer Logo"
-				class="size-8"
+			<IconBrandDeno
+				strokeWidth="1.5"
+				class="size-6 hover:text-primary-200 md:size-7"
 			/>
 		</a>
 		<div class="grid grid-cols-2 gap-x-3">
@@ -32,11 +30,17 @@
 					isDark = !isDark
 				}}
 			>
-				<img
-					src={isDark ? Moon : Sun}
-					alt={isDark ? 'turn on the light' : 'make it dark'}
-					class="size-6"
-				/>
+				{#if isDark}
+					<IconMoon
+						class="size-6 hover:text-primary-200 "
+						strokeWidth="1.5"
+					/>
+				{:else}
+					<IconSun
+						class="size-6 hover:text-primary-200 "
+						strokeWidth="1.5"
+					/>
+				{/if}
 			</button>
 
 			<Burger bind:isOpen={isOpened} />

@@ -1,3 +1,4 @@
+export const Title = 'Michael Schauer'
 export const Email = 'michael@michaelschauer.com'
 export const Domain = 'genart.michaelschauer.com'
 export const FullName = 'Michael Schauer'

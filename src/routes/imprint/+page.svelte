@@ -1,9 +1,9 @@
 <script>
-	import { Email, FullName, Address, Domain } from '$lib/Constants'
+	import { Title, Email, FullName, Address, Domain } from '$lib/Constants'
 </script>
 
 <svelte:head>
-	<title>Michael Schauer Generative Art - Privacy Policy</title>
+	<title>{Title} - Imprint</title>
 </svelte:head>
 
 <div class="container mx-auto w-full max-w-screen-xl px-5 py-20 md:px-10">

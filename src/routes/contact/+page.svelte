@@ -1,22 +1,28 @@
 <script lang="ts">
-	import { Email, FullName } from '$lib/Constants'
-	import { isPreviewing } from '@builder.io/sdk-svelte'
-	import { PUBLIC_API_KEY } from '$env/static/public'
+	import { Title, Email } from '$lib/Constants'
 
 	// this data comes from the function in `+page.server.js`, which runs on the server only
-	export let contactData: any
+	export let data
 </script>
 
 <svelte:head>
-	<title>Michael Schauer Generative Art - Contact</title>
+	<title>{Title} - {data?.content?.data?.title || 'Contact'}</title>
 </svelte:head>
 
 <div class="container mx-auto w-full max-w-screen-xl px-5 py-20 md:px-10">
-	<h1>{contactData}</h1>
-	<section class="mt-10">
+	<h1>
+		{data.content?.data?.headline || 'Contact xx'}
+	</h1>
+	<section class="mt-10 text-pretty text-center">
 		<p>
-			{contactData.data.intro}
+			{data.content?.data?.intro}
 		</p>
+		<a
+			href={`mailto:${Email}`}
+			class="button mt-10 inline-block"
+		>
+			{Email}
+		</a>
 	</section>
 </div>
 

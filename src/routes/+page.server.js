@@ -1,4 +1,3 @@
-
 import { fetchOneEntry, getBuilderSearchParams } from '@builder.io/sdk-svelte';
 import { PUBLIC_API_KEY } from '$env/static/public'
 
@@ -16,3 +15,5 @@ export async function load(event) {
 
 	return { content };
 }
+
+
