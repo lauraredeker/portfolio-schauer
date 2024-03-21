@@ -3,19 +3,25 @@
 	import Logo from '$lib/assets/logo-waves.svg'
 	import routes from '$lib/NavRoutes'
 	import { LightBackground, DarkBackground, FullName } from '$lib/Constants'
-	import { customBackground } from '$lib/store'
-	import { IconMoon, IconSun, IconBrandDeno } from '@tabler/icons-svelte'
+	import { isDarkMode, customBackground } from '$lib/store'
+	import { IconMoon, IconSun } from '@tabler/icons-svelte'
 
 	let isOpened = false
 	export let segment: string
-	export let linklist: any = []
 
-	$: isDark = false
+	function toggleDarkMode() {
+		$isDarkMode ? customBackground.set(LightBackground) : customBackground.set(DarkBackground)
+		isDarkMode.update((value) => !value)
+		console.log($isDarkMode)
+	}
+
 	$: mobileMenuClasses = `fixed top-0 h-screen w-screen flex flex-col items-center justify-center bg-black bg-opacity-70 backdrop-blur-lg transition-all duration-700
 		${isOpened ? 'opacity-100 z-40 display-block' : 'hidden'}`
 </script>
 
-<nav class="max-w-screen-3xl fixed top-0 z-40 mx-auto w-full indent-0">
+<nav
+	class="max-w-screen-3xl fixed top-0 z-40 mx-auto w-full indent-0"
+	class:text-white={$isDarkMode}>
 	<div class="absolute z-50 flex w-full flex-row items-center justify-between px-2 py-3 pr-4">
 		<div class="inline-flex w-[300px] items-center justify-start">
 			<a
@@ -23,7 +29,7 @@
 				class="flex flex-row items-center">
 				<img
 					src={Logo}
-					alt="Logo"
+					alt="Michael Schauer Gen.Art Logo"
 					class="mr-4 h-8 w-8" />
 
 				<span class="mr-1 block uppercase leading-5 tracking-wide">
@@ -35,11 +41,8 @@
 		<div class="flex flex-row">
 			<button
 				class="mr-6 flex w-auto items-center justify-center"
-				on:click={() => {
-					isDark ? customBackground.set(LightBackground) : customBackground.set(DarkBackground)
-					isDark = !isDark
-				}}>
-				{#if isDark}
+				on:click={toggleDarkMode}>
+				{#if $isDarkMode}
 					<IconSun
 						class="size-5 hover:text-primary-700 "
 						strokeWidth="1.5" />
@@ -50,11 +53,13 @@
 				{/if}
 			</button>
 
-			<div class="hidden items-center justify-end md:flex">
+			<div
+				class="hidden items-center justify-end md:flex"
+				class:text-white={$isDarkMode}>
 				{#each routes as route}
 					{#if route.label !== 'Imprint' && route.label !== 'Privacy Policy'}
 						<a
-							class={`inline-block px-2 uppercase tracking-wider underline-offset-4 transition  ease-in-out hover:underline
+							class={`inline-block px-4 uppercase tracking-wider underline-offset-4 transition  ease-in-out hover:underline
 					 ${segment === route.href ? 'underline' : ''}`}
 							aria-current={segment === route.href}
 							on:click={() => (isOpened = false)}

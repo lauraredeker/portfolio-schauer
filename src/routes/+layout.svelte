@@ -2,12 +2,9 @@
 	import Navbar from '$lib/components/Navbar.svelte'
 	import Footer from '$lib/components/Footer.svelte'
 	import { page } from '$app/stores'
-	import { customBackground } from '$lib/store'
-	import '../app.pcss'
+	import { isDarkMode, customBackground } from '$lib/store'
 
-	// This data is received directly as props from
-	// the `load` function in `+page.server.js`
-	export let links: any = []
+	import '../app.pcss'
 
 	interface CSSVariable {
 		[name: string]: string
@@ -40,11 +37,11 @@
 
 <svelte:body use:applyCSSVariable={{ background: $customBackground }} />
 
-<Navbar
-	linklist={links}
-	segment={$page.url.pathname} />
+<Navbar segment={$page.url.pathname} />
 
-<main class="flex min-h-screen flex-col justify-between">
+<main
+	class="flex min-h-screen flex-col justify-between"
+	class:text-white={$isDarkMode}>
 	<slot />
 
 	<Footer segment={$page.url.pathname} />

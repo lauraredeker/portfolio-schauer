@@ -1,4 +1,4 @@
-import { fetchOneEntry, fetchEntries, getBuilderSearchParams } from '@builder.io/sdk-svelte';
+import { fetchOneEntry, getBuilderSearchParams } from '@builder.io/sdk-svelte';
 import { PUBLIC_API_KEY } from '$env/static/public'
 
 /** @type {import('./$types').PageServerLoad} */
@@ -15,16 +15,17 @@ export async function load(event) {
 
 		// fetch the nav links
 	// and provide your Public API Key
-	const links = await fetchEntries({
+	/*const links = await fetchEntries({
 		model: 'nav-link',
 		apiKey: PUBLIC_API_KEY
 		// You can use options for queries, sorting, and targeting here
 	  });
+	 */
 
 	return { 
 		content,
 		props: {
-			links, 
+			//links, 
 		  },
 	 };
 }

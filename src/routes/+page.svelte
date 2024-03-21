@@ -35,7 +35,7 @@
 	<title>{Title} - {data.content?.data?.title || 'Hi there'}</title>
 </svelte:head>
 
-<main class="min-h-screen w-full overflow-x-hidden">
+<main class="min-h-screen w-full">
 	<section>
 		<h1 class="fixed left-20 top-24 z-0 text-left">
 			{data.content?.data?.title || 'Hi there'}
@@ -48,6 +48,7 @@
 				</h2>
 			</div>
 			<div>
+				<!--
 				{#if canShowContent}
 					<div>
 						<Content
@@ -57,19 +58,19 @@
 							customComponents={CUSTOM_COMPONENTS} />
 					</div>
 				{:else}
-					<div>
-						<img
-							src={BackgroundImage5}
-							alt="logo"
-							class="w-full" />
-					</div>
-					<div>
-						<img
-							src={BackgroundImage4}
-							alt="logo"
-							class="w-full rotate-90" />
-					</div>
-				{/if}
+				-->
+				<div>
+					<img
+						src={BackgroundImage5}
+						alt="logo"
+						class="w-full" />
+				</div>
+				<div>
+					<img
+						src={BackgroundImage4}
+						alt="logo"
+						class="w-full rotate-90" />
+				</div>
 			</div>
 		</div>
 

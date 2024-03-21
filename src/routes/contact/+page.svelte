@@ -6,12 +6,12 @@
 </script>
 
 <svelte:head>
-	<title>{data?.content?.data?.title || 'Contact'} - {Title}</title>
+	<title>{data?.content?.data?.title || 'Default Title'} - {Title}</title>
 </svelte:head>
 
 <div class="container mx-auto w-full max-w-screen-xl px-5 py-20 md:px-10">
 	<h1>
-		{data.content?.data?.headline || 'Contact'}
+		{data.content?.data?.headline || 'Default Title'}
 	</h1>
 	<section class="mt-10 text-pretty text-center">
 		<p>
@@ -19,8 +19,7 @@
 		</p>
 		<a
 			href={`mailto:${Email}`}
-			class="button mt-10 inline-block"
-		>
+			class="button mt-10 inline-block">
 			{Email}
 		</a>
 	</section>
