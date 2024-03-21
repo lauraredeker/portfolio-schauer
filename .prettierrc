@@ -5,6 +5,10 @@
 	"printWidth": 100,
 	"semi": false,
 	"singleAttributePerLine": true,
+    "quoteProps": "as-needed",
+	"arrowParens": "always",
+    "bracketSpacing": true,
+    "bracketSameLine": true,
 	"plugins": ["prettier-plugin-svelte", "prettier-plugin-tailwindcss"],
 	"overrides": [
 		{

@@ -1,5 +1,6 @@
 import { writable } from 'svelte/store';
+import { LightBackground } from '$lib/Constants'
 
 export const modalOpened = writable(false);
 
-export const customBackground = writable('#0a0908');
+export const customBackground = writable(LightBackground);

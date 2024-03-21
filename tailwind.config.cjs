@@ -12,7 +12,7 @@ const config = {
 	theme: {
 		extend: {
 			colors: {
-				black: '#101112',
+				black: colors.black,
 				transparent: 'transparent',
 				current: 'currentColor',
 				primary: {
@@ -80,7 +80,7 @@ const config = {
 			]
 		},
 		fontFamily: {
-			sans: ['Poppins', ...defaultTheme.fontFamily.sans]
+			sans: ['Almarai', ...defaultTheme.fontFamily.sans]
 		}
 	},
 

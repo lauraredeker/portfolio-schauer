@@ -42,8 +42,7 @@
 
 <Navbar
 	linklist={links}
-	segment={$page.url.pathname}
-/>
+	segment={$page.url.pathname} />
 
 <main class="flex min-h-screen flex-col justify-between">
 	<slot />
@@ -64,8 +63,7 @@
 		width: 100%;
 		height: 100%;
 		overflow: auto;
-		color: white;
-		font-family: 'Poppins', sans-serif;
+		font-family: 'Almarai', sans-serif;
 	}
 
 	:global(body) {

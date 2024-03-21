@@ -35,7 +35,7 @@
 	<title>{Title} - {data.content?.data?.title || 'Hi there'}</title>
 </svelte:head>
 
-<main class="min-h-screen w-full overflow-x-hidden text-white">
+<main class="min-h-screen w-full overflow-x-hidden">
 	<section>
 		<h1 class="fixed left-20 top-24 z-0 text-left">
 			{data.content?.data?.title || 'Hi there'}
@@ -54,23 +54,20 @@
 							model="page"
 							content={data.content}
 							apiKey={PUBLIC_API_KEY}
-							customComponents={CUSTOM_COMPONENTS}
-						/>
+							customComponents={CUSTOM_COMPONENTS} />
 					</div>
 				{:else}
 					<div>
 						<img
 							src={BackgroundImage5}
 							alt="logo"
-							class="w-full"
-						/>
+							class="w-full" />
 					</div>
 					<div>
 						<img
 							src={BackgroundImage4}
 							alt="logo"
-							class="w-full rotate-90"
-						/>
+							class="w-full rotate-90" />
 					</div>
 				{/if}
 			</div>
@@ -81,24 +78,21 @@
 				<img
 					src={BackgroundImage1}
 					alt="logo"
-					class="w-full rotate-90"
-				/>
+					class="w-full rotate-90" />
 			</div>
 
 			<div>
 				<img
 					src={BackgroundImage2}
 					alt="logo"
-					class="w-full rotate-90"
-				/>
+					class="w-full rotate-90" />
 			</div>
 
 			<div>
 				<img
 					src={BackgroundImage3}
 					alt="logo"
-					class="w-full rotate-90"
-				/>
+					class="w-full rotate-90" />
 			</div>
 		</div>
 	</section>
