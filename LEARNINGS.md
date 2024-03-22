@@ -1,10 +1,13 @@
+# Learnings
+
 Here's a list of my learnings while building this website.
 
 ## Svelte / SvelteKit
 
 - Add PostCSS with [svelte-preprocess](https://www.npmjs.com/package/svelte-preprocess)
 - Use dynamic + static classes: `class="icon {svg}"`
-- how to log a reactive variable each time it changes: `$: foo, console.log('value:', foo);`
+- How to log a reactive variable each time it changes: `$: foo, console.log('value:', foo);`
+- How to update a variable from the store: `customBackground.set('#000')``
 
 ## TypeScript
 
