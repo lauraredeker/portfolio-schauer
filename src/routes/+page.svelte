@@ -4,25 +4,7 @@
 	import { Title } from '$lib/Constants.js'
 	import Button from '$lib/components/Button.svelte'
 
-	import BackgroundImage5 from '$lib/assets/design5.png'
-	import BackgroundImage4 from '$lib/assets/design4.png'
-	import BackgroundImage3 from '$lib/assets/design3.png'
-	import BackgroundImage2 from '$lib/assets/design2.png'
-	import BackgroundImage1 from '$lib/assets/design1.png'
-
-	const CUSTOM_COMPONENTS = [
-		{
-			component: Button,
-			name: 'Hello World',
-			inputs: [
-				{
-					name: 'text',
-					type: 'string',
-					defaultValue: 'World'
-				}
-			]
-		}
-	]
+	import design1 from '$lib/assets/images/noise-shapes/noise-shapes-01.png'
 
 	// this data comes from the function in `+page.server.js`, which runs on the server only
 	export let data
@@ -37,7 +19,7 @@
 
 <main class="min-h-screen w-full">
 	<section>
-		<h1 class="fixed left-20 top-24 z-0 text-left">
+		<h1 class="fixed left-20 top-24 z-20 text-left dark:text-white">
 			{data.content?.data?.title || 'Hi there'}
 		</h1>
 
@@ -48,51 +30,34 @@
 				</h2>
 			</div>
 			<div>
-				<!--
-				{#if canShowContent}
-					<div>
-						<Content
-							model="page"
-							content={data.content}
-							apiKey={PUBLIC_API_KEY}
-							customComponents={CUSTOM_COMPONENTS} />
+				<div
+					class="inline-flex h-[1249px] w-[999px] origin-top-left rotate-90 flex-col items-center justify-center bg-white mix-blend-darken">
+					<div
+						class="inline-flex h-[1249px] w-[999px] flex-col items-center justify-center mix-blend-darken">
+						<img
+							class="h-full mix-blend-darken dark:mix-blend-difference"
+							src={design1} />
 					</div>
-				{:else}
-				-->
-				<div>
-					<img
-						src={BackgroundImage5}
-						alt="logo"
-						class="w-full" />
-				</div>
-				<div>
-					<img
-						src={BackgroundImage4}
-						alt="logo"
-						class="w-full rotate-90" />
 				</div>
 			</div>
 		</div>
 
-		<div class="grid grid-cols-3">
+		<div class="grid grid-cols-3 overflow-x-scroll">
 			<div>
 				<img
-					src={BackgroundImage1}
-					alt="logo"
+					src={design1}
 					class="w-full rotate-90" />
 			</div>
 
 			<div>
 				<img
-					src={BackgroundImage2}
-					alt="logo"
+					src={design1}
 					class="w-full rotate-90" />
 			</div>
 
 			<div>
 				<img
-					src={BackgroundImage3}
-					alt="logo"
+					src={design1}
 					class="w-full rotate-90" />
 			</div>
 		</div>

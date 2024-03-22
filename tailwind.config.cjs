@@ -9,6 +9,7 @@ const config = {
 	corePlugins: {
 		preflight: true
 	},
+	darkMode: 'class',
 	theme: {
 		extend: {
 			colors: {
@@ -73,7 +74,7 @@ const config = {
 				}
 			],
 			'10xl': [
-				'10.75rem',
+				'16vw',
 				{
 					lineHeight: '1'
 				}

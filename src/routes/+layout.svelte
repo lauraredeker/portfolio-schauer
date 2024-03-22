@@ -2,54 +2,34 @@
 	import Navbar from '$lib/components/Navbar.svelte'
 	import Footer from '$lib/components/Footer.svelte'
 	import { page } from '$app/stores'
-	import { isDarkMode, customBackground } from '$lib/store'
 
 	import '../app.pcss'
-
-	interface CSSVariable {
-		[name: string]: string
-	}
-
-	const applyCSSVariable = (
-		node: HTMLElement,
-		variables: CSSVariable
-	): { update: (variables: CSSVariable) => void } => {
-		setCssVariables(node, variables)
-
-		return {
-			update(variables: CSSVariable) {
-				setCssVariables(node, variables)
-			}
-		}
-	}
-
-	/**
-	 * Set CSS variables on a node
-	 * @param node
-	 * @param variables
-	 */
-	const setCssVariables = (node: HTMLElement, variables: CSSVariable): void => {
-		for (const name in variables) {
-			node.style.setProperty(`--${name}`, variables[name])
-		}
-	}
 </script>
 
-<svelte:body use:applyCSSVariable={{ background: $customBackground }} />
+<svelte:body />
 
 <Navbar segment={$page.url.pathname} />
 
 <main
-	class="flex min-h-screen flex-col justify-between"
-	class:text-white={$isDarkMode}>
+	class="tw-w-full tw-overflow-x-clip flex min-h-screen flex-col justify-between text-black dark:text-white">
+	<div
+		class="leading-wide fixed left-4 hidden origin-top-left -rotate-90 text-base font-normal uppercase tracking-wide md:top-96 md:block">
+		Hi, I CREATE GENERATIVE ART
+	</div>
+
 	<slot />
 
 	<Footer segment={$page.url.pathname} />
 </main>
 
-<style>
+<style lang="postcss">
 	* {
 		box-sizing: border-box;
+	}
+
+	:root {
+		--background: #f2e9e4;
+		--background-dark: #0f0f0f;
 	}
 
 	:global(html),
@@ -63,8 +43,12 @@
 		font-family: 'Almarai', sans-serif;
 	}
 
-	:global(body) {
+	:global(html) {
 		background-color: var(--background);
+
+		&.dark {
+			background-color: var(--background-dark);
+		}
 	}
 
 	:global(::selection) {

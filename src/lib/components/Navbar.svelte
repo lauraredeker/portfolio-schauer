@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Burger from '$lib/components/Burger.svelte'
-	import Logo from '$lib/assets/logo-waves.svg'
+	import Logo from '$lib/components/atoms/Logo.svelte'
 	import routes from '$lib/NavRoutes'
 	import { LightBackground, DarkBackground, FullName } from '$lib/Constants'
 	import { isDarkMode, customBackground } from '$lib/store'
@@ -10,29 +10,29 @@
 	export let segment: string
 
 	function toggleDarkMode() {
-		$isDarkMode ? customBackground.set(LightBackground) : customBackground.set(DarkBackground)
 		isDarkMode.update((value) => !value)
-		console.log($isDarkMode)
+		console.log('Darkmode', $isDarkMode)
+		if ($isDarkMode) {
+			document.documentElement.classList.add('dark')
+		} else {
+			document.documentElement.classList.remove('dark')
+		}
 	}
 
 	$: mobileMenuClasses = `fixed top-0 h-screen w-screen flex flex-col items-center justify-center bg-black bg-opacity-70 backdrop-blur-lg transition-all duration-700
 		${isOpened ? 'opacity-100 z-40 display-block' : 'hidden'}`
 </script>
 
-<nav
-	class="max-w-screen-3xl fixed top-0 z-40 mx-auto w-full indent-0"
-	class:text-white={$isDarkMode}>
+<nav class="max-w-screen-3xl fixed top-0 z-40 mx-auto w-full indent-0 dark:text-white">
 	<div class="absolute z-50 flex w-full flex-row items-center justify-between px-2 py-3 pr-4">
 		<div class="inline-flex w-[300px] items-center justify-start">
 			<a
 				href="/"
 				class="flex flex-row items-center">
-				<img
-					src={Logo}
-					alt="Michael Schauer Gen.Art Logo"
-					class="mr-4 h-8 w-8" />
-
-				<span class="mr-1 block uppercase leading-5 tracking-wide">
+				<div class="mr-4 size-8">
+					<Logo fillColor={$isDarkMode ? '#fff' : '#0F0F0F'} />
+				</div>
+				<span class="mr-1 block uppercase leading-5 tracking-wide hover:text-primary-900">
 					{FullName}
 					<span class="block font-bold">Gen.Art</span>
 				</span>
@@ -59,8 +59,10 @@
 				{#each routes as route}
 					{#if route.label !== 'Imprint' && route.label !== 'Privacy Policy'}
 						<a
-							class={`inline-block px-4 uppercase tracking-wider underline-offset-4 transition  ease-in-out hover:underline
-					 ${segment === route.href ? 'underline' : ''}`}
+							class={`
+								${segment === route.href ? 'underline' : ''}
+								inline-block px-4 text-l uppercase tracking-wider underline-offset-4 transition ease-in-out hover:scale-110 
+					 		`}
 							aria-current={segment === route.href}
 							on:click={() => (isOpened = false)}
 							href={route.href}>{route.label}</a>
