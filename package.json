@@ -18,6 +18,8 @@
 		"@builder.io/dev-tools": "^0.2.30",
 		"@builder.io/sdk": "^2.2.2",
 		"@builder.io/sdk-svelte": "^1.0.8",
+		"@fontsource/abril-fatface": "^5.0.19",
+		"@fontsource/almarai": "^5.0.12",
 		"@playwright/test": "^1.28.1",
 		"@sveltejs/adapter-auto": "^3.0.0",
 		"@sveltejs/adapter-netlify": "^3.0.1",
