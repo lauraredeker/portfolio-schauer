@@ -6,11 +6,12 @@
 	<title>{Title} - Imprint</title>
 </svelte:head>
 
-<div class="container mx-auto w-full max-w-screen-xl px-5 py-20 md:px-10">
-	<h1>Imprint</h1>
+<div class="main-container">
+	<h1>imprint</h1>
 	<section class="mt-10">
-		<p class="font-semibold text-primary-300">
-			Dieses Impressum gilt für alle Angebote unter der Domain {Domain} inklusive aller Subdomains (Unterseiten).
+		<p class="font-semibold">
+			Dieses Impressum gilt für alle Angebote unter der Domain <span class="underline"
+				>{Domain}</span> inklusive aller Subdomains (Unterseiten).
 		</p>
 		<h4 class="mb-2 mt-10 md:mt-16">Angaben gemäß § 5 TMG:</h4>
 		<p>
@@ -21,8 +22,7 @@
 			Email:
 			<a
 				class="link"
-				href={`mailto:${Email}`}
-			>
+				href={`mailto:${Email}`}>
 				{Email}
 			</a>
 		</p>

@@ -26,9 +26,14 @@
 @tailwind variants;
 
 @layer base {
+	h1.display-text {
+		@apply font-extrabold text-6xl md:text-7xl xl:text-8xl 2xl:text-10xl;
+	} 
+
 	h1 {
-		@apply text-center font-extrabold text-3xl md:text-6xl xl:text-9xl 2xl:text-10xl;
+		@apply text-center font-extrabold text-3xl sm:text-5xl md:text-6xl xl:text-7xl 2xl:text-8xl;
 	}
+
 	h2 {
 		@apply text-3xl font-bold md:text-4xl;
 	}
@@ -36,21 +41,25 @@
 		@apply text-xl font-bold md:text-2xl;
 	}
 	h4 {
-		@apply text-sm tracking-wide font-bold md:text-base uppercase
+		@apply text-sm tracking-wide font-extrabold md:text-base uppercase
 	}
 }
 
 @layer components {
 	.button {
-		@apply relative rounded border-2 border-primary-500 px-6 py-2 xl:text-xl font-bold text-primary-300 hover:bg-primary-900 transition-colors active:top-0.5;
+		@apply relative rounded border-2 text-primary-700 border-primary-500 px-6 py-2 xl:text-xl font-bold dark:text-primary-300 hover:bg-primary-700 hover:bg-opacity-15 transition-colors active:top-1;
 	}
 
 	.link {
-		@apply font-extrabold text-primary-300  px-1 hover:text-primary-100 active:text-primary-100;
+		@apply font-extrabold px-1 text-primary-700 hover:text-primary-900 dark:text-primary-300 dark:hover:text-primary-200 active:text-primary-100 active:top-1;
 	}
 }
 
 @layer utilities {
+	.main-container {
+		@apply container mx-auto w-full max-w-screen-xl px-5 py-20 md:px-44 md:py-36;
+	}
+
 	.filter-none {
 		filter: none;
 	}

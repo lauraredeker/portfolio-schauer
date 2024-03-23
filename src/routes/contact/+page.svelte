@@ -9,7 +9,7 @@
 	<title>{data?.content?.data?.title || 'Default Title'} - {Title}</title>
 </svelte:head>
 
-<div class="container mx-auto w-full max-w-screen-xl px-5 py-20 md:px-10">
+<div class="main-container">
 	<h1>
 		{data.content?.data?.headline || 'Default Title'}
 	</h1>

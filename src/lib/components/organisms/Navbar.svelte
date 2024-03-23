@@ -1,9 +1,8 @@
 <script lang="ts">
-	import Burger from '$lib/components/Burger.svelte'
 	import Logo from '$lib/components/atoms/Logo.svelte'
+	import Burger from '$lib/components/atoms/Burger.svelte'
 	import routes from '$lib/NavRoutes'
-	import { LightBackground, DarkBackground, FullName } from '$lib/Constants'
-	import { isDarkMode, customBackground } from '$lib/store'
+	import { isDarkMode } from '$lib/store'
 	import { IconMoon, IconSun } from '@tabler/icons-svelte'
 
 	let isOpened = false
@@ -26,17 +25,7 @@
 <nav class="max-w-screen-3xl fixed top-0 z-40 mx-auto w-full indent-0 dark:text-white">
 	<div class="absolute z-50 flex w-full flex-row items-center justify-between px-2 py-3 pr-4">
 		<div class="inline-flex w-[300px] items-center justify-start">
-			<a
-				href="/"
-				class="flex flex-row items-center">
-				<div class="mr-4 size-8">
-					<Logo fillColor={$isDarkMode ? '#fff' : '#0F0F0F'} />
-				</div>
-				<span class="mr-1 block uppercase leading-5 tracking-wide hover:text-primary-900">
-					{FullName}
-					<span class="block font-bold">Gen.Art</span>
-				</span>
-			</a>
+			<Logo />
 		</div>
 		<div class="flex flex-row">
 			<button
@@ -64,7 +53,6 @@
 								inline-block px-4 text-l uppercase tracking-wider underline-offset-4 transition ease-in-out hover:scale-110 
 					 		`}
 							aria-current={segment === route.href}
-							on:click={() => (isOpened = false)}
 							href={route.href}>{route.label}</a>
 					{/if}
 				{/each}

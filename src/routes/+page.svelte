@@ -2,7 +2,6 @@
 	import { PUBLIC_API_KEY } from '$env/static/public'
 	import { isPreviewing, Content } from '@builder.io/sdk-svelte'
 	import { Title } from '$lib/Constants.js'
-	import Button from '$lib/components/Button.svelte'
 
 	import design1 from '$lib/assets/images/noise-shapes/noise-shapes-01.png'
 
@@ -18,48 +17,43 @@
 </svelte:head>
 
 <main class="min-h-screen w-full">
-	<section>
-		<h1 class="fixed left-20 top-24 z-20 text-left dark:text-white">
-			{data.content?.data?.title || 'Hi there'}
-		</h1>
+	<section class="flex min-h-screen items-center">
+		<div class="main-container">
+			<h1 class="display-text left-20 top-24 z-20 text-left dark:text-white">
+				I create<br />
+				generat<span
+					class="bg-black font-normal italic text-white
+			  ">&#123;if&#125;</span
+				><br />
+				<span class="font-normal italic">art</span>
+			</h1>
+		</div>
 
-		<div class="mt-14 grid grid-cols-1 gap-4 md:grid-cols-2">
-			<div>
-				<h2 class="ml-20 mt-80 text-pretty leading-10">
+		<!--<h2 class="ml-20 mt-80 text-pretty leading-10">
 					{data.content?.data?.description || 'Description'}
-				</h2>
-			</div>
-			<div>
-				<div
-					class="inline-flex h-[1249px] w-[999px] origin-top-left rotate-90 flex-col items-center justify-center bg-white mix-blend-darken">
-					<div
-						class="inline-flex h-[1249px] w-[999px] flex-col items-center justify-center mix-blend-darken">
-						<img
-							class="h-full mix-blend-darken dark:mix-blend-difference"
-							src={design1} />
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="grid grid-cols-3 overflow-x-scroll">
-			<div>
-				<img
-					src={design1}
-					class="w-full rotate-90" />
-			</div>
-
-			<div>
-				<img
-					src={design1}
-					class="w-full rotate-90" />
-			</div>
-
-			<div>
-				<img
-					src={design1}
-					class="w-full rotate-90" />
-			</div>
-		</div>
+				</h2>-->
+		<img
+			class="fixed -top-40 left-20 h-[160%] opacity-60 mix-blend-darken dark:mix-blend-difference"
+			src={design1} />
 	</section>
+
+	<div class="grid grid-cols-3 overflow-x-scroll">
+		<div>
+			<img
+				src={design1}
+				class="w-full rotate-90" />
+		</div>
+
+		<div>
+			<img
+				src={design1}
+				class="w-full rotate-90" />
+		</div>
+
+		<div>
+			<img
+				src={design1}
+				class="w-full rotate-90" />
+		</div>
+	</div>
 </main>

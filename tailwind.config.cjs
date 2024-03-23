@@ -68,13 +68,13 @@ const config = {
 				}
 			],
 			'9xl': [
-				'9.875rem',
+				'9vw',
 				{
 					lineHeight: '1'
 				}
 			],
 			'10xl': [
-				'16vw',
+				'10vw',
 				{
 					lineHeight: '1'
 				}
