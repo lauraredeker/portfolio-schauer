@@ -26,8 +26,9 @@
 @tailwind variants;
 
 @layer base {
+	
 	h1.display-text {
-		@apply font-extrabold text-4xl md:text-7xl xl:text-8xl 2xl:text-9xl leading-tight;
+		@apply font-extrabold text-4xl md:text-7xl 2xl:text-8xl  !leading-[0.8];
 	} 
 
 	h1 {
@@ -49,11 +50,23 @@
 		@apply font-semibold italic uppercase;
 	}
 
+	.text-stroke {
+		color: transparent;
+		-webkit-text-stroke: 2px var(--black);
+
+		.dark & {
+			-webkit-text-stroke: 2px var(--white);
+		}
+	}
+
 	.focus-visible {
 		@apply focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-300;
 	}
 }
 
+/**
+ * This injects base styles
+ */
 @layer components {
 	.button {
 		@apply focus-visible relative rounded border-2 text-primary-700 border-primary-500 px-6 py-3 xl:py-2 xl:text-xl font-bold dark:text-primary-300 hover:bg-primary-700 hover:bg-opacity-15 transition-colors active:top-1 ;
@@ -73,17 +86,13 @@
 
 }
 
+
+/**
+ * This injects utility classes 
+ */
 @layer utilities {
 	.main-container {
 		@apply container mx-auto w-full max-w-screen-xl px-5 py-20 md:px-20 xl:px-48 md:py-36;
-	}
-
-	.bg-rotate {
-		@apply w-full h-full animate-spin opacity-60 mix-blend-darken bg-no-repeat;
-		background-image: url('$lib/assets/images/geometric-bg.png');
-		background-size: 80%;
-		background-position: center;
-		animation: spin 500s linear infinite;
 	}
 
 	.filter-none {

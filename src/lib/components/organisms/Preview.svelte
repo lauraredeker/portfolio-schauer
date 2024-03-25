@@ -7,23 +7,34 @@
 	import PreviewNoiseShapes from '$lib/assets/images/preview/preview_noise.png'
 	import { IconArrowDown, IconCornerLeftDown } from '@tabler/icons-svelte'
 
-	const previews = [
+	// Define a type for the previews to make the code more robust and easier to understand
+	type Preview = {
+		name: string
+		id: string
+		image: string
+	}
+	let previews: Preview[] = [
 		{ name: 'NOISE SHAPES', id: 'noise-shapes', image: PreviewNoiseShapes },
 		{ name: 'GLITCH PAINTINGS', id: 'glitch-paintings', image: PreviewGlitch },
 		{ name: 'MERIDIAN', id: 'meridian', image: PreviewMeridian },
 		{ name: 'FLOWERS', id: 'flowers', image: PreviewFlowers }
 	]
+	let currentIndex: number = 0
+	let showArrow: boolean = false
 
-	let currentIndex = 0
-	let showArrow = false
-
-	const updatePreviewAnimation = (intervall: number = 7000) => {
+	/**
+	 * Update the preview image every intervalMs milliseconds
+	 * @param intervalMs
+	 */
+	const updatePreviewAnimation = (intervalMs: number = 7000) => {
 		setInterval(() => {
-			currentIndex = currentIndex === previews.length - 1 ? 0 : currentIndex + 1
-		}, intervall)
+			// Use modulo operator to cycle currentIndex between 0 and previews.length - 1
+			currentIndex = (currentIndex + 1) % previews.length
+		}, intervalMs)
 	}
 
-	const updatePreview = (e: MouseEvent, index: number): void => {
+	// Use a more descriptive name for the event parameter
+	const updatePreview = (event: MouseEvent, index: number): void => {
 		currentIndex = index
 		showArrow = true
 	}
@@ -48,13 +59,13 @@
 
 		<div class="mb-10 grow md:mb-0 md:flex md:grow md:justify-end">
 			<div
-				class="relative flex w-full flex-wrap space-x-4 space-y-2 md:flex-row md:justify-end 2xl:w-full">
+				class="relative flex w-full flex-wrap space-x-4 space-y-2 md:flex-row md:justify-end xl:space-y-0 2xl:w-full">
 				{#each previews as { name, image }, i}
 					{#if currentIndex === i}
 						<div
 							role="presentation"
 							class={`${currentIndex === i ? 'opacity-100' : ''}
-                             absolute -left-32 bottom-24 -z-20 -mt-10 w-full justify-end opacity-0 transition-opacity duration-300 md:bottom-10 md:left-0 md:right-0 md:flex md:basis-full xl:bottom-12
+                              -z-20 mb-4 w-full justify-end opacity-0 transition-opacity duration-300 md:bottom-20 md:left-0 md:right-0 md:flex md:basis-full xl:bottom-6
                         `}>
 							<img
 								class="h-auto w-full md:max-w-[60%]"

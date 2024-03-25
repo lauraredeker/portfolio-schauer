@@ -18,13 +18,14 @@
 		}
 	}
 
-	$: mobileMenuClasses = `fixed top-0 h-screen w-screen flex flex-col items-center justify-center bg-white dark:bg-black bg-opacity-70 backdrop-blur-lg transition-all duration-700
+	$: mobileMenuClasses = `fixed top-0 left-0 right-0 h-screen w-screen flex flex-col items-center justify-center bg-white dark:bg-black bg-opacity-70 backdrop-blur-lg transition-all duration-700
 		${isOpened ? 'opacity-100 z-40 display-block' : 'hidden'}`
 </script>
 
-<nav class="max-w-screen-3xl fixed top-0 z-40 mx-auto w-full dark:text-white">
-	<div class="absolute z-50 flex w-full flex-row items-center justify-between px-2 py-3 pr-4">
-		<div class="inline-flex w-[300px] items-center justify-start">
+<nav
+	class="max-w-screen-3xl fixed left-0 right-0 top-0 z-40 w-full px-4 md:bg-transparent dark:text-white">
+	<div class="z-50 flex w-full flex-row items-center justify-between pt-3">
+		<div class="inline-flex items-center justify-start">
 			<Logo />
 		</div>
 		<div class="flex flex-row">
@@ -33,12 +34,12 @@
 				on:click={toggleDarkMode}>
 				{#if $isDarkMode}
 					<IconSun
-						class="size-5 hover:text-primary-700 focus-visible:outline-none"
-						strokeWidth="1.5" />
+						class="dark:hover-text-primary-300 size-5 hover:text-primary-700 focus-visible:outline-none"
+						stroke="1.5" />
 				{:else}
 					<IconMoon
-						class="size-5 hover:text-primary-700 focus-visible:outline-none"
-						strokeWidth="1.5" />
+						class="dark:hover-text-primary-300 size-5 hover:text-primary-700 focus-visible:outline-none"
+						stroke="1.5" />
 				{/if}
 			</button>
 
@@ -50,7 +51,7 @@
 						<a
 							class={`
 								${segment === route.href ? 'underline' : ''}
-								focus-visible text-accent inline-block px-4 text-l uppercase tracking-wider underline-offset-4 transition ease-in-out hover:text-primary-600
+								focus-visible ml-5 inline-block text-l uppercase tracking-wider underline-offset-4 transition ease-in-out hover:text-primary-600
 					 		`}
 							aria-current={segment === route.href}
 							href={route.href}>{route.label}</a>

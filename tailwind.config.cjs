@@ -2,6 +2,7 @@ const typography = require('@tailwindcss/typography')
 const forms = require('@tailwindcss/forms')
 const colors = require('tailwindcss/colors')
 const defaultTheme = require('tailwindcss/defaultTheme')
+const plugin = require('tailwindcss/plugin')
 
 /** @type {import('tailwindcss').Config}*/
 const config = {
@@ -13,7 +14,8 @@ const config = {
 	theme: {
 		extend: {
 			colors: {
-				black: colors.black,
+				black: '#0f0f0f',
+				white: '#f2e9e4',
 				transparent: 'transparent',
 				current: 'currentColor',
 				primary: {
@@ -83,10 +85,27 @@ const config = {
 		fontFamily: {
 			sans: ['Almarai', ...defaultTheme.fontFamily.sans],
 			serif: ['Playfair Display Variable', ...defaultTheme.fontFamily.serif],
-		}
+		},
+		textShadow: {
+			sm: '0 1px 2px var(--tw-shadow-color)',
+			DEFAULT: '0px 42px 4px var(--tw-shadow-color)',
+			lg: '0 8px 16px var(--tw-shadow-color)',
+		  },
 	},
 
-	plugins: [forms, typography]
+	plugins: [
+		forms, typography,
+		plugin(function ({ matchUtilities, theme }) {
+			matchUtilities(
+			  {
+				'text-shadow': (value) => ({
+				  textShadow: value,
+				}),
+			  },
+			  { values: theme('textShadow') }
+			)
+		  }),
+		]
 }
 
 module.exports = config

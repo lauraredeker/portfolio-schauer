@@ -10,13 +10,13 @@
 	on:click={() => (isOpen = !isOpen)}>
 	<span
 		aria-hidden="true"
-		class="absolute block h-[2px] w-8 transform bg-black mix-blend-difference transition duration-500 ease-in-out"
+		class="absolute block h-[2px] w-8 transform bg-black transition duration-500 ease-in-out"
 		class:rotate-45={isOpen}
 		class:-translate-y-2={!isOpen}>
 	</span>
 	<span
 		aria-hidden="true"
-		class="absolute block h-[2px] w-8 transform bg-black bg-blend-difference transition duration-500 ease-in-out"
+		class="absolute block h-[2px] w-8 transform bg-black transition duration-500 ease-in-out"
 		class:-rotate-45={isOpen}
 		class:translate-y-2={!isOpen}></span>
 	<span class="sr-only">{isOpen ? 'Close Menu' : 'Open Menu'}</span>

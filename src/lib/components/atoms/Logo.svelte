@@ -16,7 +16,7 @@
 		<LogoIcon onMouseover={isHovering} />
 	</div>
 	<span
-		class="mr-1 block text-xs uppercase leading-3 tracking-wide hover:text-primary-900 md:text-sm md:leading-5 dark:hover:text-primary-200">
+		class="mr-1 block text-xs uppercase leading-3 tracking-wide outline-1 hover:text-primary-900 md:text-sm md:leading-5 dark:hover:text-primary-200">
 		{FullName}
 		<span class="block font-bold">Gen.Art</span>
 	</span>
