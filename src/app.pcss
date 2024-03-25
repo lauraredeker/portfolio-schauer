@@ -75,7 +75,15 @@
 
 @layer utilities {
 	.main-container {
-		@apply container mx-auto w-full max-w-screen-xl px-5 py-20 md:px-20 md:py-36;
+		@apply container mx-auto w-full max-w-screen-xl px-5 py-20 md:px-20 xl:px-48 md:py-36;
+	}
+
+	.bg-rotate {
+		@apply w-full h-full animate-spin opacity-60 mix-blend-darken bg-no-repeat;
+		background-image: url('$lib/assets/images/geometric-bg.png');
+		background-size: 80%;
+		background-position: center;
+		animation: spin 500s linear infinite;
 	}
 
 	.filter-none {

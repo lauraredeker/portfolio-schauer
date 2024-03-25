@@ -1,7 +1,5 @@
 <script lang="ts">
 	import { scrollTo } from 'svelte-scrolling'
-
-	import 
 	import { onMount } from 'svelte'
 	import PreviewGlitch from '$lib/assets/images/preview/preview_glitch.png'
 	import PreviewFlowers from '$lib/assets/images/preview/preview_flowers.png'
@@ -25,10 +23,7 @@
 		}, intervall)
 	}
 
-	const updatePreview = (
-		e: MouseEvent,
-		index: number
-	): void => {
+	const updatePreview = (e: MouseEvent, index: number): void => {
 		currentIndex = index
 		showArrow = true
 	}
