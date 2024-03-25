@@ -50,7 +50,7 @@
 		class="flex grow flex-col-reverse justify-stretch md:flex-row md:items-end md:space-x-0 md:px-8">
 		<div class="w-full md:w-auto md:flex-none">
 			<button
-				use:scrollTo={{ ref: 'noise-shapes', offset: -80 }}
+				use:scrollTo={{ ref: 'noise-shapes', offset: 0 }}
 				class="button accent mb-2 block w-full text-right md:w-auto"
 				>come see my work
 				<IconArrowDown class="ml-2 inline-block animate-bounce" />

@@ -2,6 +2,7 @@
 	import { Title } from '$lib/Constants.js'
 	import HeroSection from '$lib/components/organisms/HeroSection.svelte'
 	import Gallery from '$lib/components/organisms/Gallery.svelte'
+	import { scrollRef } from 'svelte-scrolling'
 
 	import noise1 from '$lib/assets/images/noise-shapes/noise-shapes-01.png'
 	import noise2 from '$lib/assets/images/noise-shapes/noise-shapes-02.png'
@@ -35,8 +36,19 @@
 	<HeroSection />
 
 	<section
-		class="min-h-screen bg-black py-20 text-white"
-		id="gallery1">
-		<Gallery images={noiseImages} />
+		class="min-h-screen bg-black pb-20 text-white"
+		use:scrollRef={'noise-shapes'}>
+		<Gallery
+			images={noiseImages}
+			seriesNumber="01"
+			title="Noise Shapes" />
+	</section>
+	<section
+		class="min-h-screen bg-primary-300 pb-20"
+		use:scrollRef={'glitch-paintings'}>
+		<Gallery
+			images={noiseImages}
+			seriesNumber="02"
+			title="Glitch Paintings" />
 	</section>
 </main>
