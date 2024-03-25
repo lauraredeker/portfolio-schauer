@@ -1,9 +1,13 @@
 <script lang="ts">
+	// 300, 400, 700, 800
+	import '@fontsource/almarai'
+	// Supports weights 400-900
+	import '@fontsource-variable/playfair-display'
+	import '../app.pcss'
+
 	import Navbar from '$lib/components/organisms/Navbar.svelte'
 	import Footer from '$lib/components/organisms/Footer.svelte'
 	import { page } from '$app/stores'
-
-	import '../app.pcss'
 </script>
 
 <svelte:body />
@@ -11,7 +15,7 @@
 <Navbar segment={$page.url.pathname} />
 
 <main
-	class="flex min-h-screen w-full flex-col justify-between overflow-x-clip text-black dark:text-white">
+	class="flex min-h-screen w-screen flex-col justify-between overflow-x-hidden text-black dark:text-white">
 	<div
 		class="leading-wide fixed left-4 hidden origin-top-left -rotate-90 text-base font-normal uppercase tracking-wide md:top-96 md:block">
 		Hi, I CREATE GENERATIVE ART
@@ -23,7 +27,9 @@
 </main>
 
 <style lang="postcss">
-	* {
+	*,
+	*::before,
+	*::after {
 		box-sizing: border-box;
 	}
 
@@ -34,12 +40,16 @@
 
 	:global(html),
 	:global(body) {
-		font-size: 18px;
-		transition: background-color 0.2s ease 0s;
+		margin: 0;
+		font-size: 20px;
+		transition: background-color 1s ease 0s;
 		position: relative;
-		width: 100%;
-		height: 100%;
 		font-family: 'Almarai', sans-serif;
+	}
+
+	:global(body) {
+		overflow-x: hidden;
+		min-width: fit-content;
 	}
 
 	:global(html) {
@@ -53,21 +63,5 @@
 	:global(::selection) {
 		color: white;
 		background-color: #5e30f7;
-	}
-
-	:global(::-webkit-scrollbar) {
-		width: 8px;
-		height: 8px;
-		border-radius: 1px;
-	}
-
-	:global(::-webkit-scrollbar-thumb) {
-		background-color: transparent;
-		border-radius: 3px;
-	}
-
-	:global(::-webkit-scrollbar-track) {
-		background-color: transparent;
-		border-radius: 1px;
 	}
 </style>

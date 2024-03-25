@@ -81,7 +81,8 @@ const config = {
 			]
 		},
 		fontFamily: {
-			sans: ['Almarai', ...defaultTheme.fontFamily.sans]
+			sans: ['Almarai', ...defaultTheme.fontFamily.sans],
+			serif: ['Playfair Display Variable', ...defaultTheme.fontFamily.serif],
 		}
 	},
 

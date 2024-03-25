@@ -6,22 +6,19 @@
 <button
 	aria-label="menu-button"
 	class:isOpen
-	class="relative z-50 flex h-8 w-8 cursor-pointer flex-col items-center justify-center border-none text-center hover:border-primary-400 focus:outline-none focus-visible:border-2 focus-visible:border-primary-400 active:text-primary-300 md:hidden"
+	class="relative z-50 my-3 flex h-8 w-8 cursor-pointer flex-col items-center justify-center border-none text-center hover:text-primary-800 focus:outline-none focus-visible:border-2 focus-visible:border-primary-800 active:text-primary-800 md:hidden"
 	on:click={() => (isOpen = !isOpen)}>
 	<span
 		aria-hidden="true"
-		class="absolute block h-0.5 w-8 transform bg-current transition duration-500 ease-in-out"
+		class="absolute block h-[2px] w-8 transform bg-black mix-blend-difference transition duration-500 ease-in-out"
 		class:rotate-45={isOpen}
 		class:-translate-y-2={!isOpen}>
 	</span>
 	<span
 		aria-hidden="true"
-		class="absolute block h-0.5 w-8 transform bg-current transition duration-500 ease-in-out"
-		class:opacity-0={isOpen}></span>
-	<span
-		aria-hidden="true"
-		class="absolute block h-0.5 w-8 transform bg-current transition duration-500 ease-in-out"
+		class="absolute block h-[2px] w-8 transform bg-black bg-blend-difference transition duration-500 ease-in-out"
 		class:-rotate-45={isOpen}
 		class:translate-y-2={!isOpen}></span>
 	<span class="sr-only">{isOpen ? 'Close Menu' : 'Open Menu'}</span>
+	<span class="block text-xs uppercase">{isOpen ? '' : 'Menu'}</span>
 </button>

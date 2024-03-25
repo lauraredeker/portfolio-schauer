@@ -27,7 +27,7 @@
 
 @layer base {
 	h1.display-text {
-		@apply font-extrabold text-4xl md:text-7xl xl:text-8xl 2xl:text-10xl leading-tight;
+		@apply font-extrabold text-4xl md:text-7xl xl:text-8xl 2xl:text-9xl leading-tight;
 	} 
 
 	h1 {
@@ -35,28 +35,42 @@
 	}
 
 	h2 {
-		@apply text-3xl font-bold md:text-4xl;
+		@apply text-xl font-bold md:text-4xl;
 	}
 	h3 {
-		@apply text-xl font-bold md:text-2xl;
+		@apply text-l font-bold md:text-2xl;
 	}
 	h4 {
-		@apply text-sm tracking-wide font-extrabold md:text-base uppercase
+		@apply text-accent text-sm tracking-wide  md:text-base uppercase
 	}
 
 	.text-accent {
-		font-family: 'Abril Fatface', sans-serif !important;
+		font-family: 'Playfair Display Variable', sans-serif !important;
+		@apply font-semibold italic uppercase;
+	}
+
+	.focus-visible {
+		@apply focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-300;
 	}
 }
 
 @layer components {
 	.button {
-		@apply relative rounded border-2 text-primary-700 border-primary-500 px-6 py-2 xl:text-xl font-bold dark:text-primary-300 hover:bg-primary-700 hover:bg-opacity-15 transition-colors active:top-1;
+		@apply focus-visible relative rounded border-2 text-primary-700 border-primary-500 px-6 py-3 xl:py-2 xl:text-xl font-bold dark:text-primary-300 hover:bg-primary-700 hover:bg-opacity-15 transition-colors active:top-1 ;
+
+		&.accent {
+			@apply text-accent tracking-widest border-0 rounded-none bg-black text-white hover:bg-primary-700;
+		}
 	}
 
 	.link {
-		@apply font-extrabold px-1 text-primary-700 hover:text-primary-900 dark:text-primary-300 dark:hover:text-primary-200 active:text-primary-100 active:top-1;
+		@apply focus-visible font-extrabold px-1 text-primary-700 hover:text-primary-900 dark:text-primary-300 dark:hover:text-primary-200 active:text-primary-100 active:top-1;
+
+		.bg-black & {
+			@apply text-primary-300 hover:text-primary-100;
+		}
 	}
+
 }
 
 @layer utilities {

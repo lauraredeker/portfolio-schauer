@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { scrollRef } from 'svelte-scrolling'
 	import image1 from '$lib/assets/images/noise-shapes/noise-shapes-01.png'
 	import image2 from '$lib/assets/images/noise-shapes/noise-shapes-02.png'
 	import image3 from '$lib/assets/images/noise-shapes/noise-shapes-03.png'
@@ -18,7 +19,9 @@
 	}
 </script>
 
-<div class="relative flex h-full">
+<div
+	class="relative flex h-full"
+	use:scrollRef={'noise-shapes'}>
 	<div class="absolute right-10 top-10 z-50">
 		<button
 			class="button bg-white"
