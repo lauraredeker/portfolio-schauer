@@ -72,7 +72,7 @@
 		@apply focus-visible relative rounded border-2 text-primary-700 border-primary-500 px-6 py-3 xl:py-2 xl:text-xl font-bold dark:text-primary-300 hover:bg-primary-700 hover:bg-opacity-15 transition-colors active:top-1 ;
 
 		&.accent {
-			@apply text-accent tracking-widest border-0 rounded-none bg-black text-white hover:bg-primary-700;
+			@apply text-accent tracking-widest border-0 rounded-none bg-black text-white hover:bg-primary-700 dark:bg-primary-700 dark:hover:bg-primary-400;
 		}
 	}
 
@@ -92,7 +92,7 @@
  */
 @layer utilities {
 	.main-container {
-		@apply container mx-auto w-full max-w-screen-xl px-5 py-20 md:px-20 xl:px-48 md:py-36;
+		@apply container mx-auto w-full max-w-screen-2xl px-5 py-20 md:px-20 xl:px-48 md:py-36;
 	}
 
 	.filter-none {

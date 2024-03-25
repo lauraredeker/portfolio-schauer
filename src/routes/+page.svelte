@@ -36,7 +36,7 @@
 	<HeroSection />
 
 	<section
-		class="min-h-screen bg-black pb-20 text-white"
+		class="min-h-screen bg-black pb-20 text-white dark:bg-gray-900"
 		use:scrollRef={'noise-shapes'}>
 		<Gallery
 			images={noiseImages}
@@ -44,7 +44,7 @@
 			title="Noise Shapes" />
 	</section>
 	<section
-		class="min-h-screen bg-primary-300 pb-20"
+		class="min-h-screen bg-primary-300 pb-20 dark:bg-primary-900 dark:text-white"
 		use:scrollRef={'glitch-paintings'}>
 		<Gallery
 			images={noiseImages}

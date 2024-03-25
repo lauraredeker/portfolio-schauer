@@ -35,12 +35,13 @@
 </script>
 
 <div class="relative">
-	<div class="flex w-full flex-row items-center justify-between">
-		<div class="ml-36 h-36 bg-white px-12 pt-2 text-black">
-			<h3 class="font-extrabold lowercase">series {seriesNumber}</h3>
-			<h2 class="text-accent text-nowrap tracking-widest">{title}</h2>
+	<div class="flex w-full flex-row items-end justify-between">
+		<div
+			class="ml-0 bg-white px-12 pb-10 pt-4 text-black xl:min-w-[620px] dark:bg-primary-800 dark:text-white">
+			<h5 class="font-extrabold lowercase">series {seriesNumber}</h5>
+			<h3 class="text-accent text-nowrap tracking-widest">{title}</h3>
 		</div>
-		<div class="hidden md:block">
+		<div class="hidden px-12 md:block">
 			<button
 				class={`mr-3 transition-opacity ${
 					hasScrolledLeftComputed
