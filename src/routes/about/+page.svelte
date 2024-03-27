@@ -18,7 +18,7 @@
 				alt="Portrait of Michael Schauer" />
 			<h4 class="text-accent mb-4">Hi, my name is Michael Schauer</h4>
 			<p>
-				adjective iron pupil couple package dangerous foreign to noise saddle source actually hair
+				Lorem adjective iron pupil couple package dangerous foreign to noise saddle source actually hair
 				guess dead funny courage quietly environment through scientist count negative egg.<br /><br />
 			</p>
 			<p>
