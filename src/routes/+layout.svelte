@@ -16,13 +16,13 @@
 <Navbar segment={$page.url.pathname} />
 
 <div
-	class="fixed left-2 hidden origin-top-left -rotate-90 text-base font-normal uppercase tracking-wide md:top-2/3 md:block">
+	class="fixed left-2 hidden origin-top-left -rotate-90 text-base font-normal uppercase tracking-wide md:top-2/3 md:block dark:text-white">
 	Hi, I CREATE GENERATIVE ART
-	<span class="text-white opacity-60">{FullName}</span>
+	<span class="text-white opacity-60 dark:text-black">{FullName}</span>
 </div>
 
 <div
-	class="fixed left-auto right-2 hidden origin-top-right rotate-90 text-base font-normal uppercase tracking-wide text-white opacity-60 md:top-3/4 md:block">
+	class="fixed left-auto right-2 hidden origin-top-right rotate-90 text-base font-normal uppercase tracking-wide text-white opacity-60 md:top-3/4 md:block dark:text-purple-300">
 	made with touchdesigner
 </div>
 
@@ -43,7 +43,7 @@
 	:root {
 		--background: #f2e9e4;
 		--white: var(--background);
-		--background-dark: #0f0f0f;
+		--background-dark: #0f0f0fe3;
 		--black: var(--background-dark);
 	}
 
@@ -58,7 +58,29 @@
 
 	:global(body) {
 		overflow-x: hidden;
+		max-width: 100%;
+		width: 100%;
+		overscroll-behavior: none;
 		min-width: fit-content;
+	}
+
+	:global(body::after) {
+		background-image: url($lib/assets/images/noise.png);
+		background-repeat: repeat;
+		opacity: 0.8;
+		position: fixed;
+		pointer-events: none;
+		z-index: -1;
+		content: '';
+		display: block;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	:global(html.dark body::after) {
+		mix-blend-mode: difference;
 	}
 
 	:global(html) {

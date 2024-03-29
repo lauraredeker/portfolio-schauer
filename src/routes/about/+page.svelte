@@ -14,20 +14,19 @@
 		<div class="block text-pretty">
 			<img
 				src={Image}
-				class="float-left mb-6 mr-10 mt-1 w-3/12"
+				class="mb-6 mr-10 mt-1 aspect-square w-full object-cover sm:float-left sm:max-h-96 sm:w-1/3 md:w-5/12 xl:w-4/12"
 				alt="Portrait of Michael Schauer" />
 			<h4 class="text-accent mb-4">Hi, my name is Michael Schauer</h4>
 			<p>
-				Lorem adjective iron pupil couple package dangerous foreign to noise saddle source actually hair
-				guess dead funny courage quietly environment through scientist count negative egg.<br /><br />
+				Lorem adjective iron pupil couple package dangerous foreign to noise saddle source actually
+				hair guess dead funny courage quietly environment through scientist count negative egg.<br /><br />
 			</p>
 			<p>
 				Lorem brown perfectly band pile movement facing official element not forget daily had
 				forward army event drove further represent entire model must single guard garage. eye
 				involved step took conversation straw thou character cup ourselves needed fallen wild
 				organized fought scientist morning wolf agree orbit aid old spider cowboy down travel ruler
-				create chart needs principle fact pony load fly give cannot while pilot pound coat research
-				fog dozen running stepped comfortable.<br /><br />
+				create chart needs principle.<br /><br />
 			</p>
 		</div>
 		<div class="clear-both mt-12 grid grid-flow-row-dense gap-4 md:grid-cols-2">
@@ -43,7 +42,7 @@
 				</a>
 			</div>
 			<div>
-				<h4>I also take pictures of landscapes</h4>
+				<h4>I also take pictures</h4>
 				<a
 					class="button mt-4 flex items-center"
 					rel="noopener noreferrer"

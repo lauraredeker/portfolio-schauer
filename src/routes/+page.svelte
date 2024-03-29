@@ -44,7 +44,7 @@
 			title="Noise Shapes" />
 	</section>
 	<section
-		class="min-h-screen bg-primary-300 pb-20 dark:bg-primary-900 dark:text-white"
+		class="min-h-screen bg-primary-400 pb-20 dark:bg-primary-800 dark:text-white"
 		use:scrollRef={'glitch-paintings'}>
 		<Gallery
 			images={noiseImages}

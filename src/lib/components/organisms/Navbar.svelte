@@ -10,7 +10,6 @@
 
 	function toggleDarkMode() {
 		isDarkMode.update((value) => !value)
-		console.log('Darkmode', $isDarkMode)
 		if ($isDarkMode) {
 			document.documentElement.classList.add('dark')
 		} else {

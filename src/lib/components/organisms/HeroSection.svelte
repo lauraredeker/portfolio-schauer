@@ -5,7 +5,7 @@
 <section class="relative flex min-h-screen flex-col items-center">
 	<div class="main-container">
 		<div class="flex justify-center xl:justify-start">
-			<h1 class="display-text text-left md:-ml-20 xl:-ml-32 2xl:-ml-40 dark:text-white">
+			<h1 class="display-text select-none text-left md:-ml-20 xl:-ml-32 2xl:-ml-40 dark:text-white">
 				I create<br />
 				generat<span
 					class="text-stroke font-normal italic

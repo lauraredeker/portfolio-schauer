@@ -13,19 +13,7 @@ export async function load(event) {
 		}
 	});
 
-		// fetch the nav links
-	// and provide your Public API Key
-	/*const links = await fetchEntries({
-		model: 'nav-link',
-		apiKey: PUBLIC_API_KEY
-		// You can use options for queries, sorting, and targeting here
-	  });
-	 */
-
 	return { 
-		content,
-		props: {
-			//links, 
-		  },
+		content
 	 };
 }
