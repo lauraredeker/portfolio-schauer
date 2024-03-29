@@ -18,11 +18,13 @@
 <div
 	class="fixed left-2 hidden origin-top-left -rotate-90 text-base font-normal uppercase tracking-wide md:top-2/3 md:block dark:text-white">
 	Hi, I CREATE GENERATIVE ART
-	<span class="text-white opacity-60 dark:text-black">{FullName}</span>
+	<span class="ml-2 text-white opacity-60 dark:text-black">
+		{FullName}
+	</span>
 </div>
 
 <div
-	class="fixed left-auto right-2 hidden origin-top-right rotate-90 text-base font-normal uppercase tracking-wide text-white opacity-60 md:top-3/4 md:block dark:text-purple-300">
+	class="fixed left-auto right-2 hidden origin-top-right rotate-90 text-base font-normal uppercase tracking-wide text-white opacity-60 md:top-3/4 md:block dark:text-black">
 	made with touchdesigner
 </div>
 
@@ -67,7 +69,8 @@
 	:global(body::after) {
 		background-image: url($lib/assets/images/noise.png);
 		background-repeat: repeat;
-		opacity: 0.8;
+		background-size: 25%;
+		opacity: 0.6;
 		position: fixed;
 		pointer-events: none;
 		z-index: -1;

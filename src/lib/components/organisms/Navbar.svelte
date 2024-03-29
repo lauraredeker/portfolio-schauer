@@ -4,18 +4,37 @@
 	import routes from '$lib/NavRoutes'
 	import { isDarkMode } from '$lib/store'
 	import { IconMoon, IconSun } from '@tabler/icons-svelte'
+	import { onMount, beforeUpdate } from 'svelte'
 
 	let isOpened = false
 	export let segment: string
 
 	function toggleDarkMode() {
 		isDarkMode.update((value) => !value)
-		if ($isDarkMode) {
+		localStorage.setItem('user-theme', $isDarkMode ? 'dark' : 'light')
+		setTheme($isDarkMode ? 'dark' : 'light')
+	}
+
+	function setTheme(theme: string) {
+		if (theme === 'dark') {
 			document.documentElement.classList.add('dark')
 		} else {
 			document.documentElement.classList.remove('dark')
 		}
 	}
+
+	/**
+	 * Read the local storage and check whether the theme has been set already
+	 */
+	function getPersistedTheme() {
+		const persistedTheme = localStorage.getItem('user-theme') || 'light'
+		return persistedTheme
+	}
+
+	beforeUpdate(() => {
+		localStorage.setItem('user-theme', getPersistedTheme())
+		setTheme(getPersistedTheme())
+	})
 
 	$: mobileMenuClasses = `fixed top-0 left-0 right-0 h-screen w-screen flex flex-col items-center justify-center bg-white dark:bg-black bg-opacity-70 backdrop-blur-lg transition-all duration-700
 		${isOpened ? 'opacity-100 z-40 display-block' : 'hidden'}`
@@ -33,11 +52,11 @@
 				on:click={toggleDarkMode}>
 				{#if $isDarkMode}
 					<IconSun
-						class="dark:hover-text-primary-300 size-5 hover:text-primary-700 focus-visible:outline-none"
+						class="dark:hover-text-primary-300 size-5 hover:text-primary-700 focus-visible:outline-none dark:hover:text-primary-300"
 						stroke="1.5" />
 				{:else}
 					<IconMoon
-						class="dark:hover-text-primary-300 size-5 hover:text-primary-700 focus-visible:outline-none"
+						class="dark:hover-text-primary-300 size-5 hover:text-primary-700 focus-visible:outline-none dark:hover:text-primary-300"
 						stroke="1.5" />
 				{/if}
 			</button>
@@ -50,7 +69,7 @@
 						<a
 							class={`
 								${segment === route.href ? 'underline' : ''}
-								focus-visible ml-5 inline-block text-l uppercase tracking-wider underline-offset-4 transition ease-in-out hover:text-primary-600
+								focus-visible ml-5 inline-block text-l uppercase tracking-wider underline-offset-4 transition ease-in-out hover:text-primary-600  dark:hover:text-primary-300
 					 		`}
 							aria-current={segment === route.href}
 							href={route.href}>{route.label}</a>
