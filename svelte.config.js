@@ -20,7 +20,9 @@ const config = {
 			// if `edge` is true, this option cannot be used
 			split: false
 		})
-	}
+	},
+	ssr: {
+	  }
 }
 
 export default config

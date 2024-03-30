@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { onMount } from 'svelte'
+
 	// 300, 400, 700, 800
 	import '@fontsource/almarai'
 	// Supports weights 400-900
@@ -9,9 +11,11 @@
 	import Footer from '$lib/components/organisms/Footer.svelte'
 	import { page } from '$app/stores'
 	import { FullName } from '$lib/Constants'
+
+	onMount(() => {})
 </script>
 
-<svelte:body />
+<svelte:body data-scroll-container />
 
 <Navbar segment={$page.url.pathname} />
 
@@ -29,7 +33,7 @@
 </div>
 
 <main
-	class="flex min-h-screen w-screen flex-col justify-between overflow-x-hidden text-black dark:text-white">
+	class="section-2 flex min-h-screen w-screen flex-col justify-between overflow-x-hidden text-black dark:text-white">
 	<slot />
 
 	<Footer segment={$page.url.pathname} />
@@ -66,20 +70,26 @@
 		min-width: fit-content;
 	}
 
+	:global(.noise-bg::after),
 	:global(body::after) {
 		background-image: url($lib/assets/images/noise.png);
 		background-repeat: repeat;
-		background-size: 25%;
+		background-size: 15%;
 		opacity: 0.6;
 		position: fixed;
 		pointer-events: none;
-		z-index: -1;
+		z-index: 0;
 		content: '';
 		display: block;
 		left: 0;
 		top: 0;
 		width: 100%;
 		height: 100%;
+	}
+
+	:global(.noise-bg.-white::after) {
+		background-image: url($lib/assets/images/noise-white.png);
+		opacity: 0.2;
 	}
 
 	:global(html.dark body::after) {
@@ -97,5 +107,16 @@
 	:global(::selection) {
 		color: white;
 		background-color: #5e30f7;
+	}
+
+	:global(::-webkit-scrollbar) {
+		width: 0; /* Remove scrollbar space */
+		background: transparent; /* Optional: just make scrollbar invisible */
+	}
+	/* Optional: show position indicator in red */
+	:global(::-webkit-scrollbar-thumb) {
+		width: 0; /* Remove scrollbar space */
+		background: transparent; /* Optional: just make scrollbar invisible */
+		scrollbar-width: none; /* Firefox */
 	}
 </style>

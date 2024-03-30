@@ -17,6 +17,7 @@
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",
+		"@svelte-put/dragscroll": "^3.0.0",
 		"@tsconfig/svelte": "^5.0.2",
 		"@types/eslint": "8.56.0",
 		"@types/locomotive-scroll": "^4.1.3",

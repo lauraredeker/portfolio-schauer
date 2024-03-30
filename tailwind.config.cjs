@@ -15,7 +15,7 @@ const config = {
 		extend: {
 			colors: {
 				black: '#0f0f0f',
-				white: '#f2e9e4',
+				beige: '#f2e9e4',
 				transparent: 'transparent',
 				current: 'currentColor',
 				primary: {

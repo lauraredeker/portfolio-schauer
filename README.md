@@ -4,7 +4,7 @@
 
 ## A portfolio website made using `@sveltejs/kit` (work in progress)
 
-To view a demo: **[click here](https://schauer.netlify.app/)**
+**[schauer.netlify.app](https://schauer.netlify.app/)**
 
 ## Source Information
 
@@ -13,6 +13,8 @@ This website is built with
 - [SvelteKit](https://kit.svelte.dev/) (Frontend Framework)
 - [TypeScript](https://www.typescriptlang.org/)
 - [TailwindCSS](https://tailwindcss.com)
+- [TablerIcons](https://tablericons.com/)
+- [GSAP](https://gsap.com)
 - [Prettier](https://prettier.io/)
 - [ESLint](https://eslint.org/)
 
