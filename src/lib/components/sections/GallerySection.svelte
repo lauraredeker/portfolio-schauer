@@ -110,7 +110,7 @@
 </script>
 
 <section
-	class="noise-bg -white min-h-screen bg-black pb-20 text-white md:pt-32 dark:bg-gray-900"
+	class="noise-bg -white min-h-screen bg-black pb-20 text-white dark:bg-gray-900"
 	use:scrollRef={'noise-shapes'}>
 	<Gallery
 		images={noiseImages}

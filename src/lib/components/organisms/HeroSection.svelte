@@ -54,9 +54,7 @@
 					<div
 						class="mr-24 block text-right tracking-wide"
 						transition:tweenMe>
-						<span class="text-accent inline-block font-normal lowercase italic md:px-5">
-							art〜
-						</span>
+						<span class="text-accent inline-block font-normal md:px-5"> art〜 </span>
 					</div>
 				{/if}
 			</h1>

@@ -36,7 +36,7 @@
 		setTheme(getPersistedTheme())
 	})
 
-	$: mobileMenuClasses = `fixed top-0 left-0 right-0 h-screen w-screen flex flex-col items-center justify-center bg-white dark:bg-black bg-opacity-70 backdrop-blur-lg transition-all duration-700
+	$: mobileMenuClasses = `fixed top-0 left-0 bottom-0 right-0 h-screen w-screen flex flex-col items-center justify-center bg-white dark:bg-black bg-opacity-50 backdrop-blur-lg transition-all duration-700
 		${isOpened ? 'opacity-100 z-40 display-block' : 'hidden'}`
 </script>
 
@@ -68,8 +68,8 @@
 					{#if route.label !== 'Imprint' && route.label !== 'Privacy Policy'}
 						<a
 							class={`
-								${segment === route.href ? 'underline' : ''}
-								focus-visible ml-5 inline-block text-l uppercase tracking-wider underline-offset-4 transition ease-in-out hover:text-primary-600  dark:hover:text-primary-300
+								${segment === route.href ? '-is-active -black' : ''}
+								focus-visible magic-border relative ml-12 inline-block text-l uppercase tracking-wider  transition-all ease-in-out hover:text-primary-600 dark:hover:text-primary-300
 					 		`}
 							aria-current={segment === route.href}
 							href={route.href}>{route.label}</a>
@@ -85,8 +85,8 @@
 		{#each routes as route}
 			{#if route.label !== 'Imprint' && route.label !== 'Privacy Policy'}
 				<a
-					class={`text-accent block py-2 text-3xl font-bold transition ease-in-out hover:scale-125 hover:text-primary-400 md:py-6 md:text-5xl
-					 ${segment === route.href ? 'text-primary-400 underline underline-offset-8' : ''}`}
+					class={`block py-2 text-3xl font-bold transition ease-in-out hover:scale-125 hover:text-primary-600 
+					 ${segment === route.href ? 'text-primary-600 underline underline-offset-8' : ''}`}
 					aria-current={segment === route.href}
 					on:click={() => (isOpened = false)}
 					href={route.href}>{route.label}</a>

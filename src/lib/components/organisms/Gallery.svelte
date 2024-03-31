@@ -15,17 +15,16 @@
 
 <div>
 	<div
-		class="relative flex basis-full overflow-y-hidden overflow-x-scroll px-10 py-12 md:h-[100vh] md:px-20 md:py-20 xl:px-56"
+		class="relative flex basis-full overflow-y-hidden overflow-x-scroll px-10 py-12 md:h-[90vh] md:px-20 md:pt-20 xl:px-56"
 		use:dragscroll>
 		<div class="relative z-20 flex w-full flex-col items-stretch gap-10 pr-20">
 			<div
-				class=" aspect-square w-full border-4 border-white px-4 pb-6 pt-4 text-white md:px-12 dark:bg-primary-800 dark:text-white">
+				class="aspect-square w-full border-4 border-white px-4 pb-6 pt-4 text-white md:px-12 dark:bg-primary-800 dark:text-white">
 				<h3 class="font-bold lowercase">series {seriesNumber}</h3>
-				<h2 class="text-accent text-nowrap tracking-widest">{title}</h2>
+				<h2 class="text-accent text-nowrap uppercase italic tracking-widest">{title}</h2>
 			</div>
 
-			<div
-				class="text-accent text-uppercase z-10 mr-16 flex flex-col self-start text-pretty text-white md:mr-24 md:text-xl">
+			<div class="z-10 mr-16 flex flex-col self-start text-pretty text-white md:mr-24 md:text-xl">
 				drag / scroll left
 				<IconArrowLeft
 					class="size-10 md:size-20"

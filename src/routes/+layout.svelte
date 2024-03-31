@@ -3,6 +3,7 @@
 
 	// 300, 400, 700, 800
 	import '@fontsource/almarai'
+
 	// Supports weights 400-900
 	import '@fontsource-variable/playfair-display'
 	import '../app.pcss'
@@ -15,7 +16,7 @@
 	onMount(() => {})
 </script>
 
-<svelte:body/>
+<svelte:body />
 
 <Navbar segment={$page.url.pathname} />
 
@@ -28,7 +29,7 @@
 </div>
 
 <div
-	class="fixed left-auto right-2 hidden origin-top-right rotate-90 text-base font-normal uppercase tracking-wide text-white opacity-60 md:top-3/4 md:block dark:text-black">
+	class="fixed left-auto right-2 hidden origin-top-right rotate-90 text-base font-normal uppercase tracking-wide text-white opacity-60 md:top-1/2 md:block dark:text-black">
 	made with touchdesigner
 </div>
 
@@ -74,7 +75,8 @@
 	:global(body::after) {
 		background-image: url($lib/assets/images/noise.png);
 		background-repeat: repeat;
-		background-size: 15%;
+		background-size: 10%;
+		background-blend-mode: multiply;
 		opacity: 0.6;
 		position: fixed;
 		pointer-events: none;

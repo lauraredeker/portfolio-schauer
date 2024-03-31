@@ -5,7 +5,7 @@
 	import PreviewFlowers from '$lib/assets/images/preview/preview_flowers.png'
 	import PreviewMeridian from '$lib/assets/images/preview/preview_meridian.png'
 	import PreviewNoiseShapes from '$lib/assets/images/preview/preview_noise.png'
-	import { IconArrowDown, IconCornerLeftDown } from '@tabler/icons-svelte'
+	import { IconArrowDown, IconCornerLeftDown, IconPointFilled } from '@tabler/icons-svelte'
 	import ImageLoader from '../atoms/Image/ImageLoader.svelte'
 
 	// Define a type for the previews to make the code more robust and easier to understand
@@ -45,49 +45,53 @@
 	})
 </script>
 
-<section class="absolute inset-x-4 bottom-6">
-	<div
-		class="flex grow flex-col-reverse justify-stretch gap-20 overflow-hidden md:flex-row md:items-end md:space-x-0">
-		<div class="absolute bottom-28 w-full md:relative md:bottom-0 md:left-0 md:w-auto md:flex-none">
-			<button
-				use:scrollTo={{ ref: 'noise-shapes', offset: 0 }}
-				class="button accent block w-full md:bottom-0 md:w-auto"
-				>come see my work
-				<IconArrowDown class="ml-2 inline-block animate-bounce" />
-			</button>
-		</div>
+<section
+	class="absolute inset-x-4 bottom-10 flex-col gap-12 md:flex md:flex-row md:items-end md:justify-between 2xl:gap-x-48">
+	<button
+		use:scrollTo={{ ref: 'noise-shapes', offset: 0 }}
+		class="button bottom-5 block w-full shrink px-4 md:bottom-0 md:w-auto xl:px-8 2xl:px-16"
+		>come see my work
+		<IconArrowDown class="ml-2 inline-block animate-bounce" />
+	</button>
 
-		<div class="flex grow justify-end">
-			<div class="flex w-full flex-col items-end justify-end space-x-4">
+	<div
+		class="flex shrink-0 flex-col-reverse justify-between overflow-hidden border-b-[1px] border-black border-opacity-30 md:flex-row md:items-end md:space-x-20 dark:border-white dark:border-opacity-30">
+		<div class="flex w-full flex-col justify-between">
+			{#each previews as { name, image }, i}
+				{#if currentIndex === i}
+					<div
+						role="presentation"
+						class={`${currentIndex === i ? 'opacity-100' : ''}
+								-z-20 mb-4 w-full opacity-0 transition-opacity duration-300 md:flex md:w-auto md:justify-end
+							`}>
+						<ImageLoader
+							class="max-w-[800px] object-cover md:min-w-52"
+							src={image}
+							alt={name}></ImageLoader>
+					</div>
+				{/if}
+			{/each}
+
+			<div class="flex w-full flex-row items-end justify-end">
 				{#each previews as { name, id }, i}
 					<button
 						on:mouseover={(e) => updatePreview(e, i)}
 						on:focus={(e) => (showArrow = true)}
 						on:mouseleave={(e) => (showArrow = false)}
 						use:scrollTo={{ ref: id, offset: -80 }}
-						class={`${currentIndex === i ? 'underline' : ''}
-                             hidden flex-nowrap py-1 uppercase leading-normal tracking-wide underline-offset-4 hover:underline md:flex md:text-l 
-                        `}>
-						<IconCornerLeftDown
-							class={`${showArrow && currentIndex === i ? 'opacity-100' : ''}
-                            mt-1 inline-block opacity-0 transition-opacity
-                        `} />
+						class={`
+						${currentIndex === i ? '-is-active font-semibold text-primary-700 dark:text-primary-400' : ''} 
+						${i !== previews.length - 1 ? '' : ''}
+						 magic-border relative hidden px-2 py-2 font-bold lowercase leading-normal tracking-wide hover:text-primary-700 md:flex md:items-center md:justify-start md:text-base xl:text-l 2xl:px-5 dark:hover:text-primary-400 
+					`}>
+						<IconPointFilled
+							class={`${
+								currentIndex === i ? 'text-primary-700 opacity-100 dark:text-primary-400' : ''
+							}
+						mr-1 inline-block size-6 opacity-0 transition-all
+					`} />
 						{name}
 					</button>
-				{/each}
-				{#each previews as { name, image }, i}
-					{#if currentIndex === i}
-						<div
-							role="presentation"
-							class={`${currentIndex === i ? 'opacity-100' : ''}
-                              -z-20 mt-4 w-full opacity-0 transition-opacity duration-300 md:flex md:w-auto md:justify-end
-                        `}>
-							<ImageLoader
-								class="h-24 object-cover"
-								src={image}
-								alt={name}></ImageLoader>
-						</div>
-					{/if}
 				{/each}
 			</div>
 		</div>
