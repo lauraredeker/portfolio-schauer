@@ -5,7 +5,7 @@
 	import PreviewFlowers from '$lib/assets/images/preview/preview_flowers.png'
 	import PreviewMeridian from '$lib/assets/images/preview/preview_meridian.png'
 	import PreviewNoiseShapes from '$lib/assets/images/preview/preview_noise.png'
-	import { IconArrowDown, IconCornerLeftDown, IconPointFilled } from '@tabler/icons-svelte'
+	import { IconArrowDown, IconPointFilled } from '@tabler/icons-svelte'
 	import ImageLoader from '../atoms/Image/ImageLoader.svelte'
 
 	// Define a type for the previews to make the code more robust and easier to understand
