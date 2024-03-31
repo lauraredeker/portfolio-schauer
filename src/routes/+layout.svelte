@@ -15,7 +15,7 @@
 	onMount(() => {})
 </script>
 
-<svelte:body data-scroll-container />
+<svelte:body/>
 
 <Navbar segment={$page.url.pathname} />
 

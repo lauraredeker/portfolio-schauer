@@ -6,6 +6,7 @@
 	import PreviewMeridian from '$lib/assets/images/preview/preview_meridian.png'
 	import PreviewNoiseShapes from '$lib/assets/images/preview/preview_noise.png'
 	import { IconArrowDown, IconCornerLeftDown } from '@tabler/icons-svelte'
+	import ImageLoader from '../atoms/Image/ImageLoader.svelte'
 
 	// Define a type for the previews to make the code more robust and easier to understand
 	type Preview = {
@@ -44,37 +45,20 @@
 	})
 </script>
 
-<section
-	class="w-full flex-row items-end justify-between md:absolute md:inset-x-0 md:bottom-6 md:flex md:grow-0">
+<section class="absolute inset-x-4 bottom-6">
 	<div
-		class="flex grow flex-col-reverse justify-stretch md:flex-row md:items-end md:space-x-0 md:px-8">
-		<div class="w-full md:w-auto md:flex-none">
+		class="flex grow flex-col-reverse justify-stretch gap-20 overflow-hidden md:flex-row md:items-end md:space-x-0">
+		<div class="absolute bottom-28 w-full md:relative md:bottom-0 md:left-0 md:w-auto md:flex-none">
 			<button
 				use:scrollTo={{ ref: 'noise-shapes', offset: 0 }}
-				class="button accent mb-2 block w-full text-right md:w-auto"
+				class="button accent block w-full md:bottom-0 md:w-auto"
 				>come see my work
 				<IconArrowDown class="ml-2 inline-block animate-bounce" />
 			</button>
 		</div>
 
-		<div class="mb-10 grow md:mb-0 md:flex md:grow md:justify-end">
-			<div
-				class="relative flex w-full flex-wrap space-x-4 space-y-2 md:flex-row md:justify-end xl:space-y-0 2xl:w-full">
-				{#each previews as { name, image }, i}
-					{#if currentIndex === i}
-						<div
-							role="presentation"
-							class={`${currentIndex === i ? 'opacity-100' : ''}
-                              -z-20 mb-4 w-full justify-end opacity-0 transition-opacity duration-300 md:bottom-20 md:left-0 md:right-0 md:flex md:basis-full xl:bottom-6
-                        `}>
-							<img
-								class="h-auto w-full md:max-w-[60%]"
-								alt={name}
-								src={image} />
-						</div>
-					{/if}
-				{/each}
-
+		<div class="flex grow justify-end">
+			<div class="flex w-full flex-col items-end justify-end space-x-4">
 				{#each previews as { name, id }, i}
 					<button
 						on:mouseover={(e) => updatePreview(e, i)}
@@ -82,7 +66,7 @@
 						on:mouseleave={(e) => (showArrow = false)}
 						use:scrollTo={{ ref: id, offset: -80 }}
 						class={`${currentIndex === i ? 'underline' : ''}
-                            flex flex-nowrap uppercase leading-normal tracking-wide underline-offset-4 hover:underline 2xl:text-l 
+                             hidden flex-nowrap py-1 uppercase leading-normal tracking-wide underline-offset-4 hover:underline md:flex md:text-l 
                         `}>
 						<IconCornerLeftDown
 							class={`${showArrow && currentIndex === i ? 'opacity-100' : ''}
@@ -90,6 +74,20 @@
                         `} />
 						{name}
 					</button>
+				{/each}
+				{#each previews as { name, image }, i}
+					{#if currentIndex === i}
+						<div
+							role="presentation"
+							class={`${currentIndex === i ? 'opacity-100' : ''}
+                              -z-20 mt-4 w-full opacity-0 transition-opacity duration-300 md:flex md:w-auto md:justify-end
+                        `}>
+							<ImageLoader
+								class="h-24 object-cover"
+								src={image}
+								alt={name}></ImageLoader>
+						</div>
+					{/if}
 				{/each}
 			</div>
 		</div>
