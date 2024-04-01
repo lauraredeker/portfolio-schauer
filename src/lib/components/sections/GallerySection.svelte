@@ -2,6 +2,11 @@
 	import Gallery from '$lib/components/organisms/Gallery.svelte'
 	import { scrollRef } from 'svelte-scrolling'
 
+	import idontbelong from '$lib/assets/videos/idontbelong.mp4'
+	import idontbelong_poster from '$lib/assets/videos/idontbelong.jpg'
+	import memories from '$lib/assets/videos/memories.mp4'
+	import nebula from '$lib/assets/videos/nebula.mp4'
+
 	import glitch1 from '$lib/assets/images/glitch/glitch1.png'
 	import glitch2 from '$lib/assets/images/glitch/glitch2.png'
 	import glitch3 from '$lib/assets/images/glitch/glitch3.png'
@@ -52,7 +57,10 @@
 	import noise9 from '$lib/assets/images/noise-shapes/noise-shapes-09.png'
 
 	const noiseImages = [
-		{ name: '01', description: '', image: noise1 },
+		{ name: '01', description: '', image: '', video: memories },
+		{ name: '01', description: '', image: '', video: idontbelong, poster: idontbelong_poster },
+		{ name: '01', description: '', image: '', video: nebula },
+		{ name: '01', description: '', image: noise1, video: '', poster: '' },
 		{ name: '02', description: '', image: noise3 },
 		{ name: '03', description: '', image: noise4 },
 		{ name: '04', description: '', image: noise5 },
@@ -118,7 +126,7 @@
 		title="Noise Shapes" />
 </section>
 <section
-	class="noise-bg bg-primary-400 md:min-h-screen dark:bg-primary-800 dark:text-white"
+	class="noise-bg bg-primary-400 md:min-h-screen dark:bg-primary-950 dark:text-white"
 	use:scrollRef={'glitch-paintings'}>
 	<Gallery
 		images={glitchImages}
@@ -134,7 +142,7 @@
 		title="Meridian" />
 </section>
 <section
-	class="noise-bg dark:-white bg-teal-700 md:min-h-screen dark:bg-teal-950"
+	class="noise-bg dark:-white bg-primary-700 md:min-h-screen dark:bg-gray-900"
 	use:scrollRef={'flowers'}>
 	<Gallery
 		images={flowerImages}

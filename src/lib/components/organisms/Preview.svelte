@@ -46,7 +46,7 @@
 </script>
 
 <section
-	class="absolute inset-x-4 bottom-10 flex-col gap-12 md:flex md:flex-row md:items-end md:justify-between 2xl:gap-x-48">
+	class="absolute inset-x-4 bottom-6 flex-col gap-12 md:flex md:flex-row md:items-end md:justify-between 2xl:gap-x-48">
 	<button
 		use:scrollTo={{ ref: 'noise-shapes', offset: 0 }}
 		class="button bottom-5 block w-full shrink px-4 md:bottom-0 md:w-auto xl:px-8 2xl:px-16"
@@ -65,7 +65,7 @@
 								-z-20 mb-4 w-full opacity-0 transition-opacity duration-300 md:flex md:w-auto md:justify-end
 							`}>
 						<ImageLoader
-							class="max-w-[800px] object-cover md:min-w-52"
+							class="max-w-[600px] object-cover md:min-w-52"
 							src={image}
 							alt={name}></ImageLoader>
 					</div>

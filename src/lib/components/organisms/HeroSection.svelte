@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Preview from '$lib/components/organisms/Preview.svelte'
+	import video from '$lib/assets/videos/bg.mp4'
 
 	import { onMount } from 'svelte'
 	import gsap from 'gsap'
@@ -41,9 +42,9 @@
 	})
 </script>
 
-<section class="relative flex min-h-screen flex-col items-center">
+<section class="relative flex min-h-[70vh] flex-row items-stretch md:min-h-screen md:items-start">
 	<div class="main-container">
-		<div class="flex justify-center px-10 xl:justify-start">
+		<div class="align-center flex justify-center px-10 xl:justify-start">
 			<h1 class="display-text select-none text-left md:-ml-20 xl:-ml-32 2xl:-ml-40 dark:text-white">
 				I create<br />
 				generat<span
@@ -62,8 +63,17 @@
 	</div>
 	<Preview />
 
-	<div class="fixed -z-40 h-full w-full mix-blend-darken">
-		<div class="bg-rotate"></div>
+	<div class="fixed -z-40 h-full w-full">
+		<video
+			class="h-screen w-full object-fill"
+			autoplay
+			muted
+			loop
+			id="myVideo">
+			<source
+				src={video}
+				type="video/mp4" />
+		</video>
 	</div>
 
 	<!--<h2 class="ml-20 mt-80 text-pretty leading-10">
@@ -71,18 +81,3 @@
             </h2>
 		-->
 </section>
-
-<style lang="postcss">
-	.bg-rotate {
-		@apply aspect-square w-full animate-spin bg-no-repeat opacity-60 mix-blend-darken;
-		background-image: url('$lib/assets/images/geometric-bg.png');
-		background-size: 150%;
-		background-position: -10rem center;
-		animation: spin 500s linear infinite;
-
-		@media (min-width: 768px) {
-			background-size: 80%;
-			background-position: -10rem 6rem;
-		}
-	}
-</style>

@@ -19,17 +19,17 @@ const config = {
 				transparent: 'transparent',
 				current: 'currentColor',
 				primary: {
-					50: '#f3f2ff',
-					100: '#e9e8ff',
-					200: '#d5d4ff',
-					300: '#b7b1ff',
-					400: '#9385ff',
-					500: '#6647ff',
-					600: '#5e30f7',
-					700: '#501ee3',
-					800: '#4218bf',
-					900: '#38169c',
-					950: '#200b6a'
+					'50': '#eefcfd',
+					'100': '#d4f5f9',
+					'200': '#adebf4',
+					'300': '#75dbeb',
+					'400': '#36c1da',
+					'500': '#1aa5c0',
+					'600': '#1984a1',
+					'700': '#19647b',
+					'800': '#1e576c',
+					'900': '#1e4a5b',
+					'950': '#0e2f3e',
 				},
 				gray: {
 					...colors.neutral

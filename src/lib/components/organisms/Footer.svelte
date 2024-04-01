@@ -6,9 +6,10 @@
 </script>
 
 <footer
-	class="flex w-full flex-col-reverse items-center justify-between bg-black px-5 pb-5 pt-10 text-center text-xs text-white md:flex-row md:pt-24 xl:text-sm">
-	<div class="my-5 md:my-0 xl:ml-4">
-		&copy; {new Date().getFullYear()} Michael Schauer. Design & Development by
+	class="flex w-full flex-col-reverse items-end justify-between bg-black px-5 pb-5 pt-10 text-xs uppercase text-white md:flex-row md:pt-24 md:text-base">
+	<div class="my-5 text-center md:my-0 md:text-left xl:ml-4">
+		&copy; {new Date().getFullYear()} Michael Schauer. <br />
+		Design & Development by
 		<a
 			class="link"
 			href="https://www.lauraredeker.com"
@@ -27,7 +28,7 @@
 			href={Instagram}>
 			<IconBrandInstagram
 				class="size-5 hover:stroke-primary-900"
-				strokeWidth="2" />
+				stroke="2" />
 		</a>
 		<a
 			class={`link mr-4 ${segment === '/privacy-policy' ? 'underline underline-offset-4' : ''}`}

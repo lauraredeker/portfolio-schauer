@@ -2,14 +2,14 @@
 	import Logo from '$lib/components/atoms/Logo.svelte'
 	import Burger from '$lib/components/atoms/Burger.svelte'
 	import routes from '$lib/NavRoutes'
-	import { isDarkMode } from '$lib/store'
+/* 	import { isDarkMode } from '$lib/store'
 	import { IconMoon, IconSun } from '@tabler/icons-svelte'
-	import { onMount, beforeUpdate } from 'svelte'
+	import { beforeUpdate } from 'svelte' */
 
 	let isOpened = false
 	export let segment: string
 
-	function toggleDarkMode() {
+	/*function toggleDarkMode() {
 		isDarkMode.update((value) => !value)
 		localStorage.setItem('user-theme', $isDarkMode ? 'dark' : 'light')
 		setTheme($isDarkMode ? 'dark' : 'light')
@@ -22,12 +22,12 @@
 			document.documentElement.classList.remove('dark')
 		}
 	}
-
+*/
 	/**
 	 * Read the local storage and check whether the theme has been set already
 	 */
-	function getPersistedTheme() {
-		const persistedTheme = localStorage.getItem('user-theme') || 'light'
+	/* 	function getPersistedTheme() {
+		const persistedTheme = localStorage.getItem('user-theme') || 'dark'
 		return persistedTheme
 	}
 
@@ -35,8 +35,8 @@
 		localStorage.setItem('user-theme', getPersistedTheme())
 		setTheme(getPersistedTheme())
 	})
-
-	$: mobileMenuClasses = `fixed top-0 left-0 bottom-0 right-0 h-screen w-screen flex flex-col items-center justify-center bg-white dark:bg-black bg-opacity-50 backdrop-blur-lg transition-all duration-700
+ */
+	$: mobileMenuClasses = `fixed top-0 left-0 bottom-0 right-0 h-screen w-screen flex flex-col items-center gap-5 pb-24 justify-center bg-white dark:bg-black bg-opacity-50 dark:bg-opacity-50 backdrop-blur-lg transition-all duration-700
 		${isOpened ? 'opacity-100 z-40 display-block' : 'hidden'}`
 </script>
 
@@ -47,6 +47,7 @@
 			<Logo />
 		</div>
 		<div class="flex flex-row">
+			<!--
 			<button
 				class="focus-visible mr-6 hidden w-auto items-center justify-center md:flex"
 				on:click={toggleDarkMode}>
@@ -60,16 +61,15 @@
 						stroke="1.5" />
 				{/if}
 			</button>
-
+-->
 			<div
-				class="hidden items-center justify-end md:flex"
-				class:text-white={$isDarkMode}>
+				class="hidden items-center justify-end md:flex dark:text-white">
 				{#each routes as route}
 					{#if route.label !== 'Imprint' && route.label !== 'Privacy Policy'}
 						<a
 							class={`
 								${segment === route.href ? '-is-active -black' : ''}
-								focus-visible magic-border relative ml-12 inline-block text-l uppercase tracking-wider  transition-all ease-in-out hover:text-primary-600 dark:hover:text-primary-300
+								magic-border relative ml-12 inline-block text-l uppercase tracking-wider transition-all ease-in-out hover:text-primary-600 dark:hover:text-primary-300
 					 		`}
 							aria-current={segment === route.href}
 							href={route.href}>{route.label}</a>
@@ -85,8 +85,8 @@
 		{#each routes as route}
 			{#if route.label !== 'Imprint' && route.label !== 'Privacy Policy'}
 				<a
-					class={`block py-2 text-3xl font-bold transition ease-in-out hover:scale-125 hover:text-primary-600 
-					 ${segment === route.href ? 'text-primary-600 underline underline-offset-8' : ''}`}
+					class={`magic-border relative mb-2 block text-2xl font-bold uppercase tracking-wider transition-all ease-in-out hover:text-primary-600 dark:hover:text-primary-300 
+					 ${segment === route.href ? '-is-active text-primary-600 dark:text-primary-300' : ''}`}
 					aria-current={segment === route.href}
 					on:click={() => (isOpened = false)}
 					href={route.href}>{route.label}</a>

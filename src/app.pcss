@@ -28,7 +28,7 @@
 @layer base {
 	
 	h1.display-text {
-		@apply font-semibold text-4xl md:text-7xl xl:text-8xl 2xl:text-8xl  !leading-[0.8];
+		@apply font-semibold text-5xl md:text-7xl xl:text-8xl 2xl:text-8xl  !leading-[0.8];
 	} 
 
 	h1 {
@@ -70,7 +70,7 @@
  */
 @layer components {
 	.button {
-		@apply rounded focus-visible relative border-2 text-primary-800 hover:text-primary-950 border-primary-500 px-6 py-3 md:px-12 xl:py-2 xl:text-xl font-semibold dark:text-primary-300 dark:hover:text-primary-100 bg-opacity-0 bg-primary-700 hover:bg-opacity-15 transition-colors active:top-1;
+		@apply rounded focus-visible relative border-2 text-primary-800 hover:text-primary-950 border-primary-500 px-6 py-3 md:px-12 xl:py-2 xl:text-xl font-semibold dark:border-primary-300 dark:text-primary-300 dark:hover:text-primary-100 bg-opacity-0 bg-primary-700  hover:bg-opacity-15 transition-colors active:top-1;
 	}
 
 	.link {
@@ -108,6 +108,7 @@
 	}
 
 	.magic-border.-is-active::before,
+	.magic-border:focus::before,
 	.magic-border:hover::before {
 		@apply border-b-2 border-primary-600 dark:border-primary-400 border-opacity-100 -bottom-[2px] z-20 transition-all scale-x-100;
 		transform: scaleX(1);
@@ -115,7 +116,7 @@
 		transform-origin: center left;
 
 		&.-black {
-			@apply border-black;
+			@apply border-black dark:border-white;
 		}
 	}
 

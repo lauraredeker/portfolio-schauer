@@ -52,6 +52,7 @@
 		--white: var(--background);
 		--background-dark: #0f0f0fe3;
 		--black: var(--background-dark);
+		--primary-color: #1aa5c0;
 	}
 
 	:global(html),
@@ -91,7 +92,7 @@
 
 	:global(.noise-bg.-white::after) {
 		background-image: url($lib/assets/images/noise-white.png);
-		opacity: 0.2;
+		opacity: 0.3;
 	}
 
 	:global(html.dark body::after) {
@@ -108,7 +109,7 @@
 
 	:global(::selection) {
 		color: white;
-		background-color: #5e30f7;
+		background-color: var(--primary-color);
 	}
 
 	:global(::-webkit-scrollbar) {
