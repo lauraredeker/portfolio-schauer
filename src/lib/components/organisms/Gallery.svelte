@@ -15,13 +15,15 @@
 
 <div>
 	<div
-		class="relative flex basis-full overflow-y-hidden overflow-x-scroll px-10 py-12 md:h-[90vh] md:px-20 md:pt-20 xl:px-56"
+		class="relative flex h-[70vh] overflow-x-scroll px-10 py-16 md:h-[90vh] md:px-20 md:py-20 xl:px-56"
 		use:dragscroll>
-		<div class="relative z-20 flex w-full flex-col items-stretch gap-10 pr-20">
+		<div class="relative z-20 flex w-full basis-full flex-col items-start gap-10 pr-20 md:mr-20">
 			<div
 				class="aspect-square w-full border-4 border-white px-4 pb-6 pt-4 text-white md:px-12 dark:bg-primary-800 dark:text-white">
 				<h3 class="font-bold lowercase">series {seriesNumber}</h3>
-				<h2 class="text-accent text-nowrap uppercase italic tracking-widest">{title}</h2>
+				<h2 class="text-accent uppercase italic leading-none tracking-widest">
+					{title}
+				</h2>
 			</div>
 
 			<div class="z-10 mr-16 flex flex-col self-start text-pretty text-white md:mr-24 md:text-xl">
@@ -34,7 +36,7 @@
 
 		{#each images as { image, name, description }, i}
 			<ImageLoader
-				class="relative z-10 mr-20 h-screen flex-1 md:h-full md:object-contain"
+				containerClasses="mr-5 md:mr-20"
 				src={image}
 				alt={description}></ImageLoader>
 		{/each}

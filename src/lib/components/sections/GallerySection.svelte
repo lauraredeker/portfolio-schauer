@@ -110,7 +110,7 @@
 </script>
 
 <section
-	class="noise-bg -white min-h-screen bg-black pb-20 text-white dark:bg-gray-900"
+	class="noise-bg -white bg-black text-white md:min-h-screen dark:bg-gray-900"
 	use:scrollRef={'noise-shapes'}>
 	<Gallery
 		images={noiseImages}
@@ -118,7 +118,7 @@
 		title="Noise Shapes" />
 </section>
 <section
-	class="noise-bg min-h-screen bg-primary-400 pb-20 dark:bg-primary-800 dark:text-white"
+	class="noise-bg bg-primary-400 md:min-h-screen dark:bg-primary-800 dark:text-white"
 	use:scrollRef={'glitch-paintings'}>
 	<Gallery
 		images={glitchImages}
@@ -126,7 +126,7 @@
 		title="Glitch Paintings" />
 </section>
 <section
-	class="noise-bg -white min-h-screen bg-black pb-20 dark:bg-black dark:text-white"
+	class="noise-bg -white bg-black md:min-h-screen dark:bg-black dark:text-white"
 	use:scrollRef={'meridian'}>
 	<Gallery
 		images={meridianImages}
@@ -134,7 +134,7 @@
 		title="Meridian" />
 </section>
 <section
-	class="noise-bg dark:-white min-h-screen bg-teal-700 pb-20 dark:bg-teal-950"
+	class="noise-bg dark:-white bg-teal-700 md:min-h-screen dark:bg-teal-950"
 	use:scrollRef={'flowers'}>
 	<Gallery
 		images={flowerImages}

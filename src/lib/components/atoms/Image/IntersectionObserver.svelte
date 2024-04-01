@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte'
+	import { twMerge } from 'tailwind-merge'
 
+	export let containerClasses: string = ''
 	export let once: boolean = false
 	export let top: number = 0
 	export let bottom: number = 0
@@ -52,6 +54,9 @@
 
 <div
 	bind:this={container}
-	class="h-auto flex-none md:h-full">
+	class={twMerge(
+		'flex h-full flex-none items-center bg-black bg-opacity-30 object-contain',
+		containerClasses
+	)}>
 	<slot {intersecting} />
 </div>

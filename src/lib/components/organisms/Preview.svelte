@@ -55,7 +55,7 @@
 	</button>
 
 	<div
-		class="flex shrink-0 flex-col-reverse justify-between overflow-hidden border-b-[1px] border-black border-opacity-30 md:flex-row md:items-end md:space-x-20 dark:border-white dark:border-opacity-30">
+		class="hidden shrink-0 flex-col-reverse justify-between border-b-[1px] border-black border-opacity-30 md:flex md:flex-row md:items-end md:space-x-20 dark:border-white dark:border-opacity-30">
 		<div class="flex w-full flex-col justify-between">
 			{#each previews as { name, image }, i}
 				{#if currentIndex === i}
@@ -82,7 +82,7 @@
 						class={`
 						${currentIndex === i ? '-is-active font-semibold text-primary-700 dark:text-primary-400' : ''} 
 						${i !== previews.length - 1 ? '' : ''}
-						 magic-border relative hidden px-2 py-2 font-bold lowercase leading-normal tracking-wide hover:text-primary-700 md:flex md:items-center md:justify-start md:text-base xl:text-l 2xl:px-5 dark:hover:text-primary-400 
+						 magic-border relative hidden px-2 py-2 font-bold uppercase  leading-normal tracking-wide hover:text-primary-700 md:flex md:items-center md:justify-start md:text-base 2xl:px-5 dark:hover:text-primary-400 
 					`}>
 						<IconPointFilled
 							class={`${

@@ -8,6 +8,7 @@
 
 	let nativeLoading: boolean = false
 
+	export let containerClasses: string = ''
 	let className = ''
 	export { className as class }
 
@@ -20,6 +21,7 @@
 </script>
 
 <IntersectionObserver
+	{containerClasses}
 	once={true}
 	let:intersecting>
 	{#if intersecting || nativeLoading}

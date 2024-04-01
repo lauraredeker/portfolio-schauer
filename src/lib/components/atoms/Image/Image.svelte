@@ -20,6 +20,9 @@
 <img
 	{src}
 	{alt}
-	class={twMerge('object-contain opacity-0 transition-opacity duration-[1600ms]', className)}
+	class={twMerge(
+		'relative z-10 h-full flex-none object-contain opacity-0 transition-opacity duration-[2600ms]',
+		className
+	)}
 	class:opacity-100={loaded}
 	bind:this={thisImage} />
