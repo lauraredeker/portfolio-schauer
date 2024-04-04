@@ -9,17 +9,18 @@
 	export let left: number = 0
 	export let right: number = 0
 
-	let intersecting = false
+	let isIntersecting = false
 	let container: HTMLElement
 
 	onMount(() => {
 		if (typeof IntersectionObserver !== 'undefined') {
 			const rootMargin = `${bottom}px ${left}px ${top}px ${right}px`
 
+			// Create an IntersectionObserver
 			const observer = new IntersectionObserver(
 				(entries) => {
-					intersecting = entries[0].isIntersecting
-					if (intersecting && once) {
+					isIntersecting = entries[0].isIntersecting
+					if (isIntersecting && once) {
 						observer.unobserve(container)
 					}
 				},
@@ -36,13 +37,13 @@
 		function handler() {
 			const bcr = container.getBoundingClientRect()
 
-			intersecting =
+			isIntersecting =
 				bcr.bottom + bottom > 0 &&
 				bcr.right + right > 0 &&
 				bcr.top - top < window.innerHeight &&
 				bcr.left - left < window.innerWidth
 
-			if (intersecting && once) {
+			if (isIntersecting && once) {
 				window.removeEventListener('scroll', handler)
 			}
 		}
@@ -58,5 +59,5 @@
 		'flex h-full flex-none items-center bg-black bg-opacity-30 object-contain',
 		containerClasses
 	)}>
-	<slot {intersecting} />
+	<slot {isIntersecting} />
 </div>
