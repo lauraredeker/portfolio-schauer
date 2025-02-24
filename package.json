@@ -39,7 +39,7 @@
 		"tailwind-merge": "^2.2.2",
 		"tslib": "^2.4.1",
 		"typescript": "^5.0.0",
-		"vitest": "^1.0.0"
+		"vitest": "^1.6.1"
 	},
 	"dependencies": {
 		"@builder.io/dev-tools": "^0.2.30",
